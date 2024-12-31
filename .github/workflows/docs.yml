@@ -1,6 +1,8 @@
 name: docs
 
 on:
+  schedule:
+      - cron: '0 0 * * *'  # 每天UTC时间0:00执行
   push:
     branches:
       - master
@@ -15,6 +17,22 @@ jobs:
         with:
           fetch-depth: 0
           submodules: 'recursive'
+
+      - name: Update Docs
+        continue-on-error: true
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git pull
+          git submodule update --init
+          git submodule update --remote
+          git add .
+          if git diff --staged --quiet; then
+            echo "跳过更新：子模块没有变化"
+          else
+            git commit -m "自动更新子模块 [skip ci]"
+            git push
+          fi
 
       - name: Copy Docs
         shell: pwsh
@@ -34,7 +52,6 @@ jobs:
 
       - name: Build documentation site
         run: pnpm docs:build
-        continue-on-error: true
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4

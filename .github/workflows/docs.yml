@@ -1,6 +1,8 @@
 name: docs
 
 on:
+  schedule:
+      - cron: '0 0 * * *'  # 每天UTC时间0:00执行
   push:
     branches:
       - master
@@ -34,7 +36,6 @@ jobs:
 
       - name: Build documentation site
         run: pnpm docs:build
-        continue-on-error: true
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4

@@ -56,7 +56,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
-          domain: docs.terraria.ink
+          fqdn: docs.terraria.ink
           repo: UnrealMultiple/UnrealMultiple.github.io
           target_branch: master
           build_dir: docs/.vuepress/dist

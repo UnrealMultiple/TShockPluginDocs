@@ -22,10 +22,10 @@ foreach ($p in @(Get-ChildItem $(Join-Repo-Root TShockPlugin/src/**/*.csproj))) 
 
     Copy-Item -Path $defaultFile -Destination $(Join-Repo-Root 'docs' 'zh' 'guide' ($p.BaseName + '.md'))
     
-    if (Test-Path $enUsFile) {
-        Copy-Item -Path $enUsFile -Destination $(Join-Repo-Root 'docs' 'en' 'guide' ($p.BaseName + '.md'))
-    } elseif (Test-Path $defaultFile) {
-        Copy-Item -Path $defaultFile -Destination $(Join-Repo-Root 'docs' 'en' 'guide' ($p.BaseName + '.md'))
-    }
+    # if (Test-Path $enUsFile) {
+    #     Copy-Item -Path $enUsFile -Destination $(Join-Repo-Root 'docs' 'en' 'guide' ($p.BaseName + '.md'))
+    # } elseif (Test-Path $defaultFile) {
+    #     Copy-Item -Path $defaultFile -Destination $(Join-Repo-Root 'docs' 'en' 'guide' ($p.BaseName + '.md'))
+    # }
 }
 

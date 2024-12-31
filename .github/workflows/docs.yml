@@ -32,8 +32,8 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
-          repo: vuepress/vuepress.github.io
-          target_branch: main
+          repo: UnrealMultiple/UnrealMultiple.github.io
+          target_branch: master
           build_dir: docs/.vuepress/dist
         env:
           GH_PAT: ${{ secrets.GH_PAGES_TOKEN }}

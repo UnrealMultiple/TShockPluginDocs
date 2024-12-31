@@ -1,0 +1,3 @@
+[submodule "TShockPlugin"]
+	path = TShockPlugin
+	url = https://github.com/UnrealMultiple/TShockPlugin.git

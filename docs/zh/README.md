@@ -1,7 +1,6 @@
 ---
 home: true
 title: 首页
-heroImage: /images/hero.png
 actions:
   - text: 查看文档
     link: /zh/guide/get-start.md

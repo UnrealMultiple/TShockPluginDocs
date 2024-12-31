@@ -1,7 +1,6 @@
 ---
 home: true
 title: Home
-heroImage: /images/hero.png
 actions:
   - text: Documentation
     link: /en/guide/get-start.md

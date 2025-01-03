@@ -16,7 +16,7 @@
 
 ## 下载
 
-- Gitee发布(国内推荐): [Plugins.zip](https://gitee.com/kksjsj/TShockPlugin/releases/download/V1.0.0.0/Plugins.zip)
+- ApmApi(国内推荐): [Plugins.zip](http://api.terraria.ink:11434/plugin/get_all_plugins)
 - Github发布: [Plugins.zip](https://github.com/UnrealMultiple/TShockPlugin/releases/download/V1.0.0.0/Plugins.zip)
 
 #### AutoPluginManager插件 (本仓库推出的插件管理器)  

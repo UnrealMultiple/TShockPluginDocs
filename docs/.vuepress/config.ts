@@ -137,9 +137,9 @@ export default defineUserConfig({
   // use plugins
   plugins: [
     docsearchPlugin({
-      appId: '',
-      apiKey: '',
-      indexName: '',
+      appId: 'R6KR76C706',
+      apiKey: 'eab9fa3e1e84a645663bec51ec63a748',
+      indexName: 'movies_index',
       searchParameters: {
         facetFilters: ['tags:v2'],
       },

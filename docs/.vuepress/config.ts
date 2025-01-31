@@ -3,13 +3,14 @@ import process from 'node:process'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
-import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 import { getDirname, path } from 'vuepress/utils'
 import { markdownExtPlugin } from '@vuepress/plugin-markdown-ext'
+import downloadRemoteImages from './plugins/download-remote-images';
+import { markdownHintPlugin } from '@vuepress/plugin-markdown-hint'
 
 import {
   head,
@@ -118,7 +119,6 @@ export default defineUserConfig({
 
   // configure markdown
   markdown: {
-    alert: true,
     importCode: {
       handleImportPath: (importPath) => {
         // handle @vuepress packages import path
@@ -139,6 +139,13 @@ export default defineUserConfig({
 
   // use plugins
   plugins: [
+    downloadRemoteImages,
+    markdownHintPlugin({
+      // 启用提示容器，默认启用
+      hint: true,
+      // 启用 GFM 警告
+      alert: true,
+    }),
     markdownExtPlugin({
       gfm: true
     }),
@@ -192,10 +199,6 @@ export default defineUserConfig({
           },
         },
       },
-    }),
-    googleAnalyticsPlugin({
-      // we have multiple deployments, which would use different id
-      id: process.env.DOCS_GA_ID ?? '',
     }),
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components'),

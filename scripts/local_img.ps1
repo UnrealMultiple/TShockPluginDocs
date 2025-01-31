@@ -1,7 +1,6 @@
 # 定义根目录路径
 $rootDir = "docs"  # 替换为你的根目录路径
 
-
 # 递归遍历所有 Markdown 文件
 Get-ChildItem -Path $rootDir -Recurse -Filter *.md | ForEach-Object {
     $mdFilePath = $_.FullName
@@ -29,8 +28,9 @@ Get-ChildItem -Path $rootDir -Recurse -Filter *.md | ForEach-Object {
             $imageUrl = [System.IO.Path]::GetFullPath((Join-Path $mdDir $imageUrl))
         }
 
-        # 获取图片文件名
+        # 清理文件名：替换特殊字符为下划线
         $imageFileName = [System.IO.Path]::GetFileName($imageUrl)
+        $imageFileName = $imageFileName -replace '[^\w\.-]', '_'
 
         # 如果链接没有文件后缀，尝试从 URL 中提取
         if (-not [System.IO.Path]::HasExtension($imageFileName)) {
@@ -48,7 +48,7 @@ Get-ChildItem -Path $rootDir -Recurse -Filter *.md | ForEach-Object {
                 # 复制本地图片
                 Copy-Item -Path $imageUrl -Destination $localImagePath
             }
-            Write-Host "Downloaded: $imageUrl -> $localImagePath"
+            Write-Host "图片下载成功: $imageUrl -> $localImagePath"
 
             # 替换 Markdown 中的图片链接为本地相对路径
             $relativeImagePath = "img/$imageFileName"
@@ -63,4 +63,4 @@ Get-ChildItem -Path $rootDir -Recurse -Filter *.md | ForEach-Object {
     Write-Host "Markdown file updated: $mdFilePath"
 }
 
-Write-Host "All Markdown files processed."
+Write-Host "图片转本地完成!"

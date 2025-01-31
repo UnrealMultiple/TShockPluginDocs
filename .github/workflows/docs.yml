@@ -39,6 +39,11 @@ jobs:
         run: |
             ./scripts/copy_docs.ps1
 
+      - name: localize Image
+        shell: pwsh
+        run: |
+            ./scripts/local_img.ps1
+
       - name: Install pnpm
         uses: pnpm/action-setup@v4
 

@@ -11,7 +11,7 @@ node_modules/
 
 # Log files
 *.log
-
+**/img/
 docs/zh/guide/*
 
 !docs/zh/guide/get-start.md

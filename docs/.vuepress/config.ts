@@ -56,7 +56,8 @@ export default defineUserConfig({
     repo: 'UnrealMultiple/TShockPlugin',
     docsRepo: 'UnrealMultiple/TShockPluginDocs',
     docsDir: 'docs',
-
+    home: '/zh/',
+    contributors: false,
     // theme-level locales config
     locales: {
       /**
@@ -204,7 +205,7 @@ export default defineUserConfig({
     isProd
       ? shikiPlugin({
           langs: ['bash', 'diff', 'json', 'md', 'ts', 'vue','json5','csharp','yaml'],
-          theme: 'github-light-default',
+          theme: 'github-dark-dimmed',
         })
       : [],
   ],

@@ -46,6 +46,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
+    "@vuepress/core": "^1.9.10",
     "@vuepress/plugin-markdown-ext": "2.0.0-rc.74",
     "@vuepress/plugin-markdown-hint": "2.0.0-rc.74",
     "add": "^2.0.6",
@@ -55,6 +56,7 @@
     "eslint-config-vuepress": "^5.2.4",
     "husky": "^9.1.7",
     "nano-staged": "^0.8.0",
+    "node-fetch": "^3.3.2",
     "pnpm": "^9.15.4",
     "prettier": "^3.4.2",
     "prettier-config-vuepress": "^5.0.0",

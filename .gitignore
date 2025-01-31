@@ -1,0 +1,26 @@
+# VuePress files
+docs/.vuepress/.temp/
+docs/.vuepress/.cache/
+docs/.vuepress/dist/
+
+# Node modules
+node_modules/
+
+# MacOS Desktop Services Store
+.DS_Store
+
+# Log files
+*.log
+
+docs/zh/guide/*
+
+!docs/zh/guide/get-start.md
+
+docs/zh/plugin-dev/*
+
+!docs/zh/plugin-dev/get-start.md
+
+
+docs/en/guide/*
+
+!docs/en/guide/get-start.md

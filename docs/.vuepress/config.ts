@@ -205,7 +205,7 @@ export default defineUserConfig({
     isProd
       ? shikiPlugin({
           langs: ['bash', 'diff', 'json', 'md', 'ts', 'vue','json5','csharp','yaml'],
-          theme: 'github-dark-dimmed',
+          theme: 'github-light',
         })
       : [],
   ],

@@ -30,7 +30,10 @@ Get-ChildItem -Path $rootDir -Recurse -Filter *.md | ForEach-Object {
 
         # 清理文件名：替换特殊字符为下划线
         $imageFileName = [System.IO.Path]::GetFileName($imageUrl)
-        $imageFileName = $imageFileName -replace '[^\w\.-]', '_'
+        if ($imageUrl -match '[\?@=&]') {
+            Write-Host "跳过图片(包含图片参数): $imageUrl"
+            continue
+        }
 
         # 如果链接没有文件后缀，尝试从 URL 中提取
         if (-not [System.IO.Path]::HasExtension($imageFileName)) {
@@ -45,8 +48,7 @@ Get-ChildItem -Path $rootDir -Recurse -Filter *.md | ForEach-Object {
                 # 下载网络图片
                 Invoke-WebRequest -Uri $imageUrl -OutFile $localImagePath
             } else {
-                # 复制本地图片
-                Copy-Item -Path $imageUrl -Destination $localImagePath
+                continue
             }
             Write-Host "图片下载成功: $imageUrl -> $localImagePath"
 
@@ -54,13 +56,13 @@ Get-ChildItem -Path $rootDir -Recurse -Filter *.md | ForEach-Object {
             $relativeImagePath = "img/$imageFileName"
             $mdContent = $mdContent.Replace($match.Groups[1].Value, $relativeImagePath)
         } catch {
-            Write-Host "Failed to download: $imageUrl"
+            Write-Host "图片下载失败: $imageUrl"
         }
     }
 
     # 保存修改后的 Markdown 文件
     Set-Content -Path $mdFilePath -Value $mdContent
-    Write-Host "Markdown file updated: $mdFilePath"
+    Write-Host "文件图片已处理: $mdFilePath"
 }
 
 Write-Host "图片转本地完成!"

@@ -10,8 +10,10 @@ function Join-Repo-Root {
 
 $jsonContent = Get-Content -Path $(Join-Repo-Root 'TShockPlugin/.config/submodule_build.json') -Raw  | ConvertFrom-Json
 foreach($submodule in $jsonContent.submodules)
-{
-    Copy-Item -Path $(Join-Repo-Root 'TShockPlugin' $submodule.readme) -Destination $(Join-Repo-Root 'docs' 'zh' 'guide' ($submodule.name + ".md"))
+{   
+    if (-not [string]::IsNullOrEmpty($submodule.readme)) {
+      Copy-Item -Path $(Join-Repo-Root 'TShockPlugin' $submodule.readme) -Destination $(Join-Repo-Root 'docs' 'zh' 'guide' ($submodule.name + ".md"))
+    }
 }
 
 

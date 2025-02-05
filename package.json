@@ -57,7 +57,7 @@
     "husky": "^9.1.7",
     "nano-staged": "^0.8.0",
     "node-fetch": "^3.3.2",
-    "pnpm": "^9.15.4",
+    "pnpm": "^10.0.0",
     "prettier": "^3.4.2",
     "prettier-config-vuepress": "^5.0.0",
     "rimraf": "^6.0.1",
@@ -66,7 +66,7 @@
     "tsconfig-vuepress": "^5.2.1",
     "typescript": "^5.7.2"
   },
-  "packageManager": "pnpm@9.15.4",
+  "packageManager": "pnpm@10.2.0",
   "engines": {
     "node": ">=18.19.0"
   }

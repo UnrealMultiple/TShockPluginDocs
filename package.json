@@ -51,7 +51,7 @@
     "@vuepress/plugin-markdown-hint": "2.0.0-rc.74",
     "add": "^2.0.6",
     "axios": "^1.7.9",
-    "bumpp": "^9.9.1",
+    "bumpp": "^10.0.0",
     "eslint": "^9.17.0",
     "eslint-config-vuepress": "^5.2.4",
     "husky": "^9.1.7",

@@ -8,6 +8,8 @@ env:
   Ali_Secret: ${{ secrets.ALI_SECRET }}
 
 jobs:
+
+
   issue-ssl-certificate:
     name: Issue SSL certificate
     runs-on: ubuntu-latest
@@ -15,23 +17,16 @@ jobs:
       - uses: Menci/acme@v2
         with:
           version: 3.0.2
-          
           domains: docs.terraria.ink
           append-wildcard: true
 
-          arguments: --dns dns_ali -d docs.terraria.ink -d *.terraria.ink
+          arguments: --server letsencrypt --dns dns_ali -d docs.terraria.ink -d *.terraria.ink
           arguments-file: ''
 
           output-cert: output/cert.pem
           output-fullchain: output/fullchain.pem
           output-key: output/key.pem
    
-
-  deploy-to-aliyun:
-    name: Deploy certificate to Aliyun
-    runs-on: ubuntu-latest
-    steps:
-  
       - uses: Menci/deploy-certificate-to-aliyun@beta-v1
         with:
     

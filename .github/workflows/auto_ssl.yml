@@ -18,9 +18,9 @@ jobs:
         with:
           version: 3.0.2
           domains: docs.terraria.ink
-          append-wildcard: true
+          append-wildcard: false
 
-          arguments: --server letsencrypt --dns dns_ali -d terraria.ink -d docs.terraria.ink
+          arguments: --server letsencrypt --dns dns_ali -d terraria.ink
           arguments-file: ''
 
           output-cert: output/cert.pem

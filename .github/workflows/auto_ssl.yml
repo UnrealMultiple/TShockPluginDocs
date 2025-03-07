@@ -30,7 +30,7 @@ jobs:
       - uses: Menci/deploy-certificate-to-aliyun@beta-v1
         with:
     
-          access-key-id: ${{ secrets.ALI_KYE }}
+          access-key-id: ${{ secrets.ALI_KEY }}
           access-key-secret: ${{ secrets.ALI_SECRET }}
           
           fullchain-file: output/fullchain.pem

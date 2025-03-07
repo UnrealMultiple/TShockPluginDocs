@@ -1,0 +1,54 @@
+on:
+  schedule: # execute every 24 hours
+    - cron: '35 6 * * *'
+  workflow_dispatch:
+
+env:
+  Ali_Key: ${{ secrets.ALI_KYE}}
+  Ali_Secret: ${{ secrets.ALI_SECRET }}
+
+jobs:
+  issue-ssl-certificate:
+    name: Issue SSL certificate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Menci/acme@v2
+        with:
+          version: 3.0.2
+          
+          domains: docs.terraria.ink
+          append-wildcard: true
+
+          arguments: --dns dns_ali -d docs.terraria.ink -d *.terraria.ink
+          arguments-file: ''
+
+          output-cert: output/cert.pem
+          output-fullchain: output/fullchain.pem
+          output-key: output/key.pem
+   
+
+  deploy-to-aliyun:
+    name: Deploy certificate to Aliyun
+    runs-on: ubuntu-latest
+    steps:
+  
+      - uses: Menci/deploy-certificate-to-aliyun@beta-v1
+        with:
+    
+          access-key-id: ${{ secrets.ALI_KYE }}
+          access-key-secret: ${{ secrets.ALI_SECRET }}
+          
+          fullchain-file: output/fullchain.pem
+          key-file: output/key.pem
+
+          certificate-name: TShockPluginsDocs
+
+          # (Optional) Deploy to CDN
+          cdn-domains: |
+            docs.terraria.ink
+        
+          # (Optional) API request timeout (unit ms)
+          timeout: 10000
+
+          # (Optional) API request attempt times
+          retry: 3

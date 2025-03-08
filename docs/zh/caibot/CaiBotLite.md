@@ -21,7 +21,9 @@
 
 5. 下载适配插件/MOD
    - TShock插件: [[下载]](http://api.terraria.ink:11434/plugin/get_plugin_zip?assembly_name=CaiBotLite)
-   - TMOD: 开发中...
+   - TMOD:
+       - [[GitHub]](https://github.com/UnrealMultiple/CaiBotLiteMod/releases/latest/download/CaiBotLiteMod.tmod)
+       - [[国内镜像]](https://github.moeyy.xyz/https://github.com/UnrealMultiple/CaiBotLiteMod/releases/latest/download/CaiBotLiteMod.tmod)
 6. 安装适配插件/MOD
    ### TShock
    1. 将插件放入`ServerPlugins`文件夹, 如果有CaiBot.dll请删除它(CaiBot已经不再支持)  
@@ -38,7 +40,7 @@
    7. 配置文件位于`tshock/CaiBotLite.json`, 可以在配置文件中设置`白名单开关`和`白名单提示群号`  
       ![image](https://github.com/user-attachments/assets/93db782a-b616-4ec6-b3a4-ff7d0f083b7a)  
    ### TMOD  
-   填坑中...  
+   
 7. 发送`/菜单`查看详细功能，感谢使用CaiBotLite
 > [!CAUTION]
 > 目前暂不支持子群功能，预计下周更新  

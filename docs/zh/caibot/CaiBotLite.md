@@ -9,6 +9,9 @@
 - 同时也是CaiBot的轻量版, 服务器运行非常稳定, 再也不会被TX踢下线了 :)
 - CaiBotLite拥有CaiBot的所有基础功能, 并且支持命令面板
 
+## 🙏反馈QQ群
+  ![image](https://github.com/user-attachments/assets/dc65cb87-31aa-42a9-809e-0c17548a6676)
+
 
 ## 📖使用教程
 
@@ -39,9 +42,25 @@
       ![image](https://github.com/user-attachments/assets/dce00aac-3e09-4a63-92b8-4bb86ca78c35)
    7. 配置文件位于`tshock/CaiBotLite.json`, 可以在配置文件中设置`白名单开关`和`白名单提示群号`  
       ![image](https://github.com/user-attachments/assets/93db782a-b616-4ec6-b3a4-ff7d0f083b7a)  
-   ### TMOD  
-   
-7. 发送`/菜单`查看详细功能，感谢使用CaiBotLite
+   ### TMOD
+   1. 将MOD放入`Documents\My Games\Terraria\tModLoader\Mods`文件夹, 如果有CaiBotMod.tmod请删除它(CaiBot已经不再支持)  
+      ![image](https://github.com/user-attachments/assets/8c087240-f6fb-4d4a-a4be-c5f8e49ebf9b)  
+   2. 启动服务器，输入命令`生成绑定码`  
+      ![image](https://github.com/user-attachments/assets/bcc5ec3d-4ce3-4a2b-aa53-6ea762c630a5)  
+   3. 群内发送`/添加服务器 <显示IP> <显示端口> <绑定码>`(隐藏命令)添加服务器   
+      ![image](https://github.com/user-attachments/assets/86845477-982f-472e-80ba-d26e675841aa)  
+   5. 当后台出现绑定成功提示，即服务器绑定成功!   
+      ![image](https://github.com/user-attachments/assets/2b17e272-6bfb-42ce-85c1-b491fce45359)   
+   6. 此时即可使用服务器命令 (๑1๑中2即为服务器序号)  
+      ![image](https://github.com/user-attachments/assets/1c7d5f53-1c29-42c5-8661-ccd4b7adf627)  
+      ![image](https://github.com/user-attachments/assets/f16b4849-edf6-4cb4-82cb-a53a32bdf21c)  
+   7. 配置文件位于`tModLoader/CaiBotLite.json`, 可以在配置文件中设置`白名单开关`和`白名单提示群号`  
+      ![image](https://github.com/user-attachments/assets/71a4b6d6-33a3-4efe-a434-08ed05ec07a8)
+  > [!NOTE]
+  > 进度查询功能需要使用安装`BossChecklist`模组    
+  > ![image](https://github.com/user-attachments/assets/70c3b525-c3e7-40d5-843b-38ca20bf773f)  
+
+8. 发送`/菜单`查看详细功能，感谢使用CaiBotLite
 > [!CAUTION]
 > 目前暂不支持子群功能，预计下周更新  
 > 各群的白名单不互通  

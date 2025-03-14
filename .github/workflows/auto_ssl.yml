@@ -73,7 +73,7 @@ jobs:
           fullchain-file: output/fullchain.pem
           key-file: output/key.pem
   
-          certificate-name: TShockPluginsDocs
+          certificate-name: CaiBotApi
   
           # (Optional) Deploy to CDN
           cdn-domains: |

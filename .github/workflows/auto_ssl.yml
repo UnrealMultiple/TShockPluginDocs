@@ -1,3 +1,4 @@
+name: Issue SSL certificate
 on:
   schedule: # execute every 24 hours
     - cron: '35 6 * * *'
@@ -8,10 +9,8 @@ env:
   Ali_Secret: ${{ secrets.ALI_SECRET }}
 
 jobs:
-
-
-  issue-ssl-certificate:
-    name: Issue SSL certificate
+  issue-docs-ssl-certificate:
+    name: Issue Docs SSL certificate
     runs-on: ubuntu-latest
     steps:
       - uses: Menci/acme@v2
@@ -47,3 +46,42 @@ jobs:
 
           # (Optional) API request attempt times
           retry: 3
+          
+  issue-ssl-certificate:
+    name: Issue CaiBotRaw SSL certificate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Menci/acme@v2
+        with:
+          version: 3.0.2
+          domains: raw.terraria.ink
+          append-wildcard: false
+  
+          arguments: --server letsencrypt --dns dns_ali
+          arguments-file: ''
+  
+          output-cert: output/cert.pem
+          output-fullchain: output/fullchain.pem
+          output-key: output/key.pem
+   
+      - uses: Menci/deploy-certificate-to-aliyun@beta-v1
+        with:
+    
+          access-key-id: ${{ secrets.ALI_KEY }}
+          access-key-secret: ${{ secrets.ALI_SECRET }}
+          
+          fullchain-file: output/fullchain.pem
+          key-file: output/key.pem
+  
+          certificate-name: TShockPluginsDocs
+  
+          # (Optional) Deploy to CDN
+          cdn-domains: |
+            raw.terraria.ink
+        
+          # (Optional) API request timeout (unit ms)
+          timeout: 10000
+  
+          # (Optional) API request attempt times
+          retry: 3
+  

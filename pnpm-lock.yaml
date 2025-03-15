@@ -21,8 +21,8 @@ importers:
         specifier: 2.0.0-rc.66
         version: 2.0.0-rc.66(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.20(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.0)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0))(@vuepress/bundler-webpack@2.0.0-rc.20(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))
       '@vuepress/plugin-register-components':
-        specifier: 2.0.0-rc.66
-        version: 2.0.0-rc.66(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.20(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.0)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0))(@vuepress/bundler-webpack@2.0.0-rc.20(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))
+        specifier: 2.0.0-rc.82
+        version: 2.0.0-rc.82(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.20(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.0)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0))(@vuepress/bundler-webpack@2.0.0-rc.20(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))
       '@vuepress/plugin-shiki':
         specifier: 2.0.0-rc.83
         version: 2.0.0-rc.83(@vueuse/core@13.0.0(vue@3.5.13(typescript@5.7.3)))(typescript@5.7.3)(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.20(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.0)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0))(@vuepress/bundler-webpack@2.0.0-rc.20(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))
@@ -2276,10 +2276,10 @@ packages:
   '@vuepress/plugin-register-components@1.9.10':
     resolution: {integrity: sha512-sgdJ5OydTPZAoTkselpvVP3Xsd6bfZ0FpaxOTinal0gJ99h49lvLu9bvzMx13rdGRFO/kRXn0qQQpwKTAfTPqA==}
 
-  '@vuepress/plugin-register-components@2.0.0-rc.66':
-    resolution: {integrity: sha512-nE0uCzu2KnaXHLXrAxhHh9jgvAcMXIRT6a0VTfnfxrh0vumZZBxZllhD/WLkCIceQ7KjrZu6euKL6Izt3gtWuA==}
+  '@vuepress/plugin-register-components@2.0.0-rc.82':
+    resolution: {integrity: sha512-D+bod3ujf/RC/41nSbWWfzonKomuh/pFTYMXBdLCWb4e92Ckqz3dt5bR3aFGgOaUC9iNDmVPTGkXKuAd30Amqw==}
     peerDependencies:
-      vuepress: 2.0.0-rc.19
+      vuepress: 2.0.0-rc.20
 
   '@vuepress/plugin-seo@2.0.0-rc.84':
     resolution: {integrity: sha512-cCRbn3DI2XF+551Y1lwWmEe65PuOGpwVPuk+vpcZUBxkC7zO3MkSpqzjFde+aPgv7owNQYzjCwG50uPM1VGYOg==}
@@ -10684,7 +10684,7 @@ snapshots:
       copy-webpack-plugin: 5.1.2(webpack@4.47.0)
       core-js: 3.40.0
       cross-spawn: 6.0.6
-      css-loader: 2.1.1(webpack@4.47.0)
+      css-loader: 2.1.1(webpack@5.98.0(esbuild@0.14.7))
       esbuild: 0.14.7
       file-loader: 3.0.1(webpack@4.47.0)
       js-yaml: 3.14.1
@@ -10697,7 +10697,7 @@ snapshots:
       toml: 3.0.0
       url-loader: 1.1.2(webpack@4.47.0)
       vue: 2.7.16
-      vue-loader: 15.11.1(@vue/compiler-sfc@3.5.13)(cache-loader@3.0.1(webpack@4.47.0))(css-loader@2.1.1(webpack@5.98.0(esbuild@0.14.7)))(lodash@4.17.21)(prettier@3.5.3)(vue-template-compiler@2.7.16)(webpack@4.47.0)
+      vue-loader: 15.11.1(@vue/compiler-sfc@3.5.13)(cache-loader@3.0.1(webpack@4.47.0))(css-loader@2.1.1(webpack@4.47.0))(lodash@4.17.21)(prettier@3.5.3)(vue-template-compiler@2.7.16)(webpack@4.47.0)
       vue-router: 3.6.5(vue@2.7.16)
       vue-server-renderer: 2.7.16
       vue-template-compiler: 2.7.16
@@ -11026,9 +11026,9 @@ snapshots:
       - debug
       - supports-color
 
-  '@vuepress/plugin-register-components@2.0.0-rc.66(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.20(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.0)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0))(@vuepress/bundler-webpack@2.0.0-rc.20(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))':
+  '@vuepress/plugin-register-components@2.0.0-rc.82(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.20(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.0)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0))(@vuepress/bundler-webpack@2.0.0-rc.20(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))':
     dependencies:
-      chokidar: 3.6.0
+      chokidar: 4.0.3
       vuepress: 2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.20(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.0)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0))(@vuepress/bundler-webpack@2.0.0-rc.20(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3))
 
   '@vuepress/plugin-seo@2.0.0-rc.84(typescript@5.7.3)(vuepress@2.0.0-rc.19(@vuepress/bundler-vite@2.0.0-rc.20(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.0)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0))(@vuepress/bundler-webpack@2.0.0-rc.20(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))':
@@ -12328,7 +12328,7 @@ snapshots:
     dependencies:
       postcss: 8.5.3
 
-  css-loader@2.1.1(webpack@4.47.0):
+  css-loader@2.1.1(webpack@5.98.0(esbuild@0.14.7)):
     dependencies:
       camelcase: 5.3.1
       icss-utils: 4.1.1
@@ -12341,7 +12341,7 @@ snapshots:
       postcss-modules-values: 2.0.0
       postcss-value-parser: 3.3.1
       schema-utils: 1.0.0
-      webpack: 4.47.0
+      webpack: 5.98.0(esbuild@0.14.7)
 
   css-loader@7.1.2(webpack@5.98.0(esbuild@0.14.7)):
     dependencies:
@@ -17382,10 +17382,10 @@ snapshots:
 
   vue-hot-reload-api@2.3.4: {}
 
-  vue-loader@15.11.1(@vue/compiler-sfc@3.5.13)(cache-loader@3.0.1(webpack@4.47.0))(css-loader@2.1.1(webpack@5.98.0(esbuild@0.14.7)))(lodash@4.17.21)(prettier@3.5.3)(vue-template-compiler@2.7.16)(webpack@4.47.0):
+  vue-loader@15.11.1(@vue/compiler-sfc@3.5.13)(cache-loader@3.0.1(webpack@4.47.0))(css-loader@2.1.1(webpack@4.47.0))(lodash@4.17.21)(prettier@3.5.3)(vue-template-compiler@2.7.16)(webpack@4.47.0):
     dependencies:
       '@vue/component-compiler-utils': 3.3.0(lodash@4.17.21)
-      css-loader: 2.1.1(webpack@4.47.0)
+      css-loader: 2.1.1(webpack@5.98.0(esbuild@0.14.7))
       hash-sum: 1.0.2
       loader-utils: 1.4.2
       vue-hot-reload-api: 2.3.4

@@ -47,7 +47,7 @@
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
     "@vuepress/core": "^1.9.10",
-    "@vuepress/plugin-markdown-ext": "2.0.0-rc.74",
+    "@vuepress/plugin-markdown-ext": "2.0.0-rc.83",
     "@vuepress/plugin-markdown-hint": "2.0.0-rc.74",
     "add": "^2.0.6",
     "axios": "^1.7.9",

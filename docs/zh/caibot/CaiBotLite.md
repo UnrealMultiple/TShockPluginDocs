@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/dfc54397-f402-4cee-8b46-9a0bbd225258)# CaiBotLite 使用指南
+# CaiBotLite 使用指南
 
 > [!IMPORTANT]  
 > CaiBot已经不再提供服务器服务，请您尽快迁移到CaiBotLite  
@@ -70,14 +70,14 @@
 - 命令 `/添加黑名单 <名字>` 来封禁玩家（仅针对本群）
 - 命令 `/删除黑名单 <名字>` 来解除封禁
 
-## 🔗群继承
-1. 使用命令 `/获取群信息` 获取主群信息  
+## 🔗父群绑定
+1. 使用命令 `/获取群信息` 获取父群信息  
 ![image](https://github.com/user-attachments/assets/38d5c265-17ff-441c-9cf7-6aa67190ffbc)  
 2. 使用命令 `/绑定父群 <父群ID>` 继承父群  
    ![image](https://github.com/user-attachments/assets/52176279-b9e1-4264-b179-1d5a82e303df)  
 > [!NOTE]  
 > 使用命令 `/解绑父群` 解绑父群  
-> 群白名单、设置、管理员等都会替换为父群的
+> 服务器、群白名单、设置、管理员等都会替换为父群的
 
 ---
 

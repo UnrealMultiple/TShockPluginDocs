@@ -1,18 +1,16 @@
-# CaiBotLite 使用指南
+![image](https://github.com/user-attachments/assets/dfc54397-f402-4cee-8b46-9a0bbd225258)# CaiBotLite 使用指南
 
 > [!IMPORTANT]  
-> CaiBot已经不再提供服务器服务，请您尽快迁移到CaiBotLite
+> CaiBot已经不再提供服务器服务，请您尽快迁移到CaiBotLite  
+> 默认管理员为拉BOT的用户  
 
 ## 📄前言
 
 - CaiBotLite是由Cai及UnrealMultiple开发维护的Terraria QQ官方机器人
 - 同时也是CaiBot的轻量版, 服务器运行非常稳定, 再也不会被TX踢下线了 :)
 - CaiBotLite拥有CaiBot的所有基础功能, 并且支持命令面板
-
 ## 🙏反馈QQ群
   ![image](https://github.com/user-attachments/assets/dc65cb87-31aa-42a9-809e-0c17548a6676)
-
-
 ## 📖使用教程
 
 1. 添加CaiBotLite到群中，可以扫描下面的二维码，也可以使用手机打开链接: [[添加CaiBotLite到群中]](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102256264&robot_uin=3889168216)  
@@ -61,11 +59,7 @@
   > ![image](https://github.com/user-attachments/assets/70c3b525-c3e7-40d5-843b-38ca20bf773f)  
 
 8. 发送`/菜单`查看详细功能，感谢使用CaiBotLite
-> [!CAUTION]
-> 目前暂不支持子群功能，预计下周更新  
-> 各群的白名单不互通  
-> 文件功能暂时不可用
-
+   
 ## 🔐BOT管理员
 - 命令 `/添加管理 <名字>` 为玩家添加管理员权限
 - 命令 `/删除管理 <名字>` 移除玩家的管理员权限
@@ -75,6 +69,15 @@
 ## 🗑️黑名单管理
 - 命令 `/添加黑名单 <名字>` 来封禁玩家（仅针对本群）
 - 命令 `/删除黑名单 <名字>` 来解除封禁
+
+## 🔗群继承
+1. 使用命令 `/获取群信息` 获取主群信息  
+![image](https://github.com/user-attachments/assets/38d5c265-17ff-441c-9cf7-6aa67190ffbc)  
+2. 使用命令 `/绑定父群 <父群ID>` 继承父群  
+   ![image](https://github.com/user-attachments/assets/52176279-b9e1-4264-b179-1d5a82e303df)  
+> [!NOTE]  
+> 使用命令 `/解绑父群` 解绑父群  
+> 群白名单、设置、管理员等都会替换为父群的
 
 ---
 

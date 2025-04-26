@@ -40,7 +40,7 @@ export default defineUserConfig({
     '/zh/': {
       lang: 'zh-CN',
       title: 'TShock中文插件库',
-      description: 'TShock中文插件库,',
+      description: '插件&工具&BOT',
     },
     '/en/': {
       lang: 'en-US',

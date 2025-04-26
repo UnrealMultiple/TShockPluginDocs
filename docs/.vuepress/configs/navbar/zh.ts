@@ -8,16 +8,16 @@ const plugindevDirectory = path.join(__dirname, '..', '..', '..','zh', 'plugin-d
 
 export const navbarZh: NavbarOptions = [
   {
-    text: '插件使用指南',
-    children: fs.readdirSync(guideDirectory)
-      .filter(file => file.endsWith('.md'))
-      .map(file => `/zh/guide/${file}`),
+    text: '插件文档',
+    link: '/zh/guide/get-start.html'
   },
   {
-    text: '插件开发指南',
-    children: fs.readdirSync(plugindevDirectory)
-      .filter(file => file.endsWith('.md'))
-      .map(file => `/zh/plugin-dev/${file}`),
+    text: '插件开发',
+    link: '/zh/plugin-dev/get-start.html'
+  },
+  {
+    text: '其他文档',
+    link: '/zh/other/get-start.html'
   },
 ];
 

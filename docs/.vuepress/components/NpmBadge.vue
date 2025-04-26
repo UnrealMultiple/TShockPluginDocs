@@ -5,7 +5,7 @@ const props = withDefaults(
   defineProps<{
     /** package name */
     package: string
-    /** dist-tag to use */
+    /** dist tag */
     distTag?: string
   }>(),
   {
@@ -14,7 +14,7 @@ const props = withDefaults(
 )
 
 const badgeLink = computed(
-  () => `https://www.npmjs.com/package/${props.package}`,
+  () => `https://www.npmjs.com/package/${props.package}/v/next`,
 )
 const badgeLabel = computed(() => {
   if (props.distTag) {
@@ -42,8 +42,12 @@ const badgeImg = computed(
   </a>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .npm-badge {
   margin-right: 0.5rem;
+
+  &::after {
+    display: none !important;
+  }
 }
 </style>

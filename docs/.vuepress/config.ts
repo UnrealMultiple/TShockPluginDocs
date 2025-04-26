@@ -10,13 +10,17 @@ import { defineUserConfig } from 'vuepress'
 import { getDirname, path } from 'vuepress/utils'
 import { markdownExtPlugin } from '@vuepress/plugin-markdown-ext'
 import { markdownHintPlugin } from '@vuepress/plugin-markdown-hint'
+import { redirectPlugin } from '@vuepress/plugin-redirect'
+import { iconPlugin } from '@vuepress/plugin-icon'
+import type { DefaultThemePageData } from '@vuepress/theme-default/lib/shared/page.js'
+import type { Page } from 'vuepress'
 
 import {
   head,
   navbarEn,
   navbarZh,
   sidebarEn,
-  sidebarZh,
+  sidebarZh
 } from './configs/index.js'
 
 const __dirname = getDirname(import.meta.url)
@@ -79,7 +83,7 @@ export default defineUserConfig({
        * Chinese locale config
        */
       '/zh/': {
-        // navbar
+      // navbar
         navbar: navbarZh,
         selectLanguageName: '简体中文',
         selectLanguageText: '选择语言',
@@ -87,7 +91,7 @@ export default defineUserConfig({
         // sidebar
         sidebar: sidebarZh,
         // page meta
-        //editLinkText: '在 GitHub 上编辑此页',
+        editLinkText: '在 GitHub 上编辑此页',
         lastUpdatedText: '上次更新',
         contributorsText: '贡献者',
         // custom containers
@@ -111,9 +115,9 @@ export default defineUserConfig({
 
     themePlugins: {
       // only enable git plugin in production mode
-      git: isProd,
+      git: true,
       // use shiki plugin in production mode instead
-      prismjs: !isProd,
+      prismjs: true,
     },
   }),
 
@@ -136,9 +140,14 @@ export default defineUserConfig({
       },
     },
   },
+  
 
+  
   // use plugins
   plugins: [
+    iconPlugin({
+      prefix: 'lucide:',
+    }),
     markdownHintPlugin({
       hint: true,
   
@@ -146,6 +155,12 @@ export default defineUserConfig({
     }),
     markdownExtPlugin({
       gfm: true
+    }),
+    redirectPlugin({
+      config: {
+        '/zh/caibot/CaiBotLite.html': '/zh/other/CaiBotLite.html',
+        '/' : `/zh/`
+      },
     }),
     docsearchPlugin({
       appId: 'IBFDY2JQY1',
@@ -204,9 +219,37 @@ export default defineUserConfig({
     // only enable shiki plugin in production mode
     isProd
       ? shikiPlugin({
-          langs: ['bash', 'diff', 'json', 'md', 'ts', 'vue','json5','csharp','yaml'],
-          theme: 'github-light',
+          langs: ['bash', 'diff', 'json', 'md','json5','csharp','yaml'],
+          themes: {light: 'github-light', dark: 'github-dark'},
         })
       : [],
   ],
+  alias: {
+    '@theme/VPAutoLink.vue': path.resolve(
+      __dirname,
+      './components/VPAutoLink.vue',
+    ),
+    '@theme/useNavbarRepo': path.resolve(
+      __dirname,
+      './composables/useNavbarRepo.ts',
+    ),
+    '@theme/useNavbarSelectLanguage': path.resolve(
+      __dirname,
+      './composables/useNavbarSelectLanguage.ts',
+    ),
+    '@theme/resolveAutoLink': path.resolve(
+      __dirname,
+      './utils/resolveAutoLink.ts',
+    ),
+  },
+  extendsPage: (page: Page<Partial<DefaultThemePageData>>) => {
+    const { icon } = page.frontmatter
+
+    // save icon into route meta
+    if (icon) {
+      page.routeMeta.icon = icon
+    }
+  },
+
 })
+

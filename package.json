@@ -49,7 +49,7 @@
     "@vuepress/plugin-icon": "2.0.0-rc.94",
     "@vuepress/plugin-markdown-ext": "2.0.0-rc.83",
     "@vuepress/plugin-markdown-hint": "2.0.0-rc.84",
-    "@vuepress/plugin-redirect": "2.0.0-rc.94",
+    "@vuepress/plugin-redirect": "2.0.0-rc.98",
     "add": "^2.0.6",
     "axios": "^1.7.9",
     "bumpp": "^10.0.0",

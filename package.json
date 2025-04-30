@@ -35,7 +35,7 @@
     "@vuepress/plugin-docsearch": "2.0.0-rc.98",
     "@vuepress/plugin-google-analytics": "2.0.0-rc.80",
     "@vuepress/plugin-register-components": "2.0.0-rc.82",
-    "@vuepress/plugin-shiki": "2.0.0-rc.83",
+    "@vuepress/plugin-shiki": "2.0.0-rc.98",
     "@vuepress/theme-default": "2.0.0-rc.84",
     "http-server": "^14.1.1",
     "sass-embedded": "^1.83.0",

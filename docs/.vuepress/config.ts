@@ -159,7 +159,8 @@ export default defineUserConfig({
     redirectPlugin({
       config: {
         '/zh/caibot/CaiBotLite.html': '/zh/other/CaiBotLite.html',
-        '/' : `/zh/`
+        '/' : `/zh/`,
+        '/zh/EconomicsAPI/': '/zh/guide/EconomicsAPI.html#进度限制'
       },
     }),
     docsearchPlugin({

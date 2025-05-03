@@ -8,28 +8,50 @@ function Join-Repo-Root {
     return Join-Path $PSScriptRoot '..' @Paths
 }
 
-# 创建符号链接的函数
 function Create-Symlink {
     param (
         [string]$Source,
         [string]$Destination
     )
     
+    # 验证参数
+    if ([string]::IsNullOrEmpty($Source) -or [string]::IsNullOrEmpty($Destination)) {
+        Write-Host "❌ Source or Destination path is empty"
+        return
+    }
+
+    # 确保源文件存在
+    if (-not (Test-Path $Source)) {
+        Write-Host "❌ Source file does not exist: $Source"
+        return
+    }
+
     # 确保目标目录存在
     $destDir = [System.IO.Path]::GetDirectoryName($Destination)
     if (-not (Test-Path $destDir)) {
         New-Item -ItemType Directory -Path $destDir -Force | Out-Null
     }
     
-    # 如果目标已存在则删除（可能是旧链接或文件）
+    # 删除已存在的目标（文件或目录）
     if (Test-Path $Destination) {
-        Remove-Item $Destination -Force
+        try {
+            # 对于目录，使用递归删除
+            if ((Get-Item $Destination) -is [System.IO.DirectoryInfo]) {
+                Remove-Item $Destination -Recurse -Force -ErrorAction Stop
+            } else {
+                Remove-Item $Destination -Force -ErrorAction Stop
+            }
+        } catch {
+            Write-Host "❌ Failed to remove existing item at $Destination : $_"
+            return
+        }
     }
     
     # 创建符号链接
     try {
-        New-Item -ItemType SymbolicLink -Path $Destination -Target $Source -Force
-        Write-Host "✅ Created symlink: $Destination -> $Source"
+        $itemType = if (Test-Path $Source -PathType Container) { "Directory" } else { "File" }
+        New-Item -ItemType SymbolicLink -Path $Destination -Target $Source -Force -ErrorAction Stop
+        Write-Host "✅ Created $itemType symlink: $Destination -> $Source"
     } catch {
         Write-Host "❌ Failed to create symlink for $Destination : $_"
     }
@@ -54,11 +76,14 @@ foreach ($p in @(Get-ChildItem $(Join-Repo-Root TShockPlugin/src/**/*.csproj))) 
     }
 }
 
-# 处理开发文档
+# 处理开发文档 - 改为文件级链接
 $devDocsSource = $(Join-Repo-Root 'TShockPluginDevelopDocs' 'Document')
 $devDocsDest = $(Join-Repo-Root 'docs' 'zh' 'plugin-dev')
+
 if (Test-Path $devDocsSource) {
-    # 对于目录，我们只能递归创建单个链接（Windows限制）
-    # 或者可以选择为每个文件创建链接
-    Create-Symlink -Source $devDocsSource -Destination $devDocsDest
+    # 为目录中的每个文件创建单独链接
+    Get-ChildItem $devDocsSource -File | ForEach-Object {
+        $destFile = Join-Path $devDocsDest $_.Name
+        Create-Symlink -Source $_.FullName -Destination $destFile
+    }
 }

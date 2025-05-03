@@ -16,13 +16,13 @@ function Update-Markdown-Links {
     
     $content = Get-Content -Path $FilePath -Raw
     
-    # 替换绝对路径格式 /PluginName/README.md 为 /PluginName.md
+    # 替换绝对路径格式 /PluginName/README.md 为 /PluginName.md（保留根路径）
     $updatedContent = $content -replace '\[([^\]]+)\]\(\/([^\/]+)\/README\.md\)', '[$1](/$2.md)'
     
-    # 替换父级目录格式 ../SubmoduleName/README.md 为 /SubmoduleName.md
-    $updatedContent = $updatedContent -replace '\[([^\]]+)\]\(\.\.\/([^\/]+)\/README\.md\)', '[$1](/$2.md)'
+    # 替换父级目录格式 ../SubmoduleName/README.md 为 SubmoduleName.md（改为相对路径）
+    $updatedContent = $updatedContent -replace '\[([^\]]+)\]\(\.\.\/([^\/]+)\/README\.md\)', '[$1]($2.md)'  # <- 关键修改点
     
-    # 替换当前目录 README.md 链接为根路径格式
+    # 替换当前目录 README.md 链接为根路径格式（保留根路径）
     $updatedContent = $updatedContent -replace '\[([^\]]+)\]\(\.\/README\.md\)', '[$1](/README.md)'
     
     if ($updatedContent -ne $content) {

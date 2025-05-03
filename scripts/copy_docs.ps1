@@ -16,8 +16,8 @@ function Update-Markdown-Links {
     
     $content = Get-Content -Path $FilePath -Raw
     
-    # Replace ../SubmoduleName/README.md with /SubmoduleName.md
-    $updatedContent = $content -replace '\[([^\]]+)\]\(\.\.\/([^\/]+)\/README\.md\)', '[$1](/$2.md)'
+    # Replace /PluginName/README.md with /PluginName.md
+    $updatedContent = $content -replace '\[([^\]]+)\]\(\/([^\/]+)\/README\.md\)', '[$1](/$2.md)'
     
     # Replace ./README.md with just the filename (for current directory cases)
     $updatedContent = $updatedContent -replace '\[([^\]]+)\]\(\.\/README\.md\)', '[$1](/README.md)'

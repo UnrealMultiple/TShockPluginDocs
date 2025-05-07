@@ -15,8 +15,8 @@ importers:
         specifier: 2.0.0-rc.22
         version: 2.0.0-rc.22(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3)
       '@vuepress/plugin-docsearch':
-        specifier: 2.0.0-rc.98
-        version: 2.0.0-rc.98(@algolia/client-search@5.17.1)(search-insights@2.17.2)(typescript@5.7.3)(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.1))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))
+        specifier: 2.0.0-rc.102
+        version: 2.0.0-rc.102(@algolia/client-search@5.17.1)(search-insights@2.17.2)(typescript@5.7.3)(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.1))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))
       '@vuepress/plugin-google-analytics':
         specifier: 2.0.0-rc.98
         version: 2.0.0-rc.98(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.1))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))
@@ -1905,6 +1905,11 @@ packages:
   '@vuepress/core@2.0.0-rc.22':
     resolution: {integrity: sha512-hyF+7rDVlQ+IiHP1FgGWcWl1UiODjdu20VUmmumNTD9q5QQGh31liBNU7J3QXPUfp+5wxMq/QhICJCvSiKSc6w==}
 
+  '@vuepress/helper@2.0.0-rc.102':
+    resolution: {integrity: sha512-cDh8IZ1b+duDCBxFR/6UeWl6MYYyCDIRnaWXhg0pToyBibMKA9prYRBrrLgKsmnCcCAZ1WDTVT6eruos9RKpgw==}
+    peerDependencies:
+      vuepress: 2.0.0-rc.22
+
   '@vuepress/helper@2.0.0-rc.83':
     resolution: {integrity: sha512-STmxImHGjaSbuX0CgeFoTT4gzXnrvlo5QfyAthwFjDbEBRtP7lxVe79yAt7h+2HGIWIKcNazStaCyHBVK9RmtA==}
     peerDependencies:
@@ -1962,8 +1967,8 @@ packages:
     peerDependencies:
       vuepress: 2.0.0-rc.20
 
-  '@vuepress/plugin-docsearch@2.0.0-rc.98':
-    resolution: {integrity: sha512-8djWtL2eM1q8NJD/nV3ekipZvbKdr/q/Z3raDP/1JbB+NziAZJy+1nf53aKIr21hpOPHErNPWq/Oe5d7QQyZxA==}
+  '@vuepress/plugin-docsearch@2.0.0-rc.102':
+    resolution: {integrity: sha512-DKCn+awaAc/VBySE1pTzzzLw/rhgyKyv0XgJLd+SnLje7tL4J6O9I0sqkohpIYz5iPU/Cqq+ge905olfEvDjVA==}
     peerDependencies:
       vuepress: 2.0.0-rc.22
 
@@ -10323,6 +10328,18 @@ snapshots:
       - supports-color
       - typescript
 
+  '@vuepress/helper@2.0.0-rc.102(typescript@5.7.3)(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.1))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))':
+    dependencies:
+      '@vue/shared': 3.5.13
+      '@vueuse/core': 13.1.0(vue@3.5.13(typescript@5.7.3))
+      cheerio: 1.0.0
+      fflate: 0.8.2
+      gray-matter: 4.0.3
+      vue: 3.5.13(typescript@5.7.3)
+      vuepress: 2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.1))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3))
+    transitivePeerDependencies:
+      - typescript
+
   '@vuepress/helper@2.0.0-rc.83(typescript@5.7.3)(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.1))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))':
     dependencies:
       '@vue/shared': 3.5.13
@@ -10438,12 +10455,12 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@vuepress/plugin-docsearch@2.0.0-rc.98(@algolia/client-search@5.17.1)(search-insights@2.17.2)(typescript@5.7.3)(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.1))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))':
+  '@vuepress/plugin-docsearch@2.0.0-rc.102(@algolia/client-search@5.17.1)(search-insights@2.17.2)(typescript@5.7.3)(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.1))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))':
     dependencies:
       '@docsearch/css': 3.9.0
       '@docsearch/js': 3.9.0(@algolia/client-search@5.17.1)(search-insights@2.17.2)
       '@docsearch/react': 3.9.0(@algolia/client-search@5.17.1)(search-insights@2.17.2)
-      '@vuepress/helper': 2.0.0-rc.98(typescript@5.7.3)(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.1))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))
+      '@vuepress/helper': 2.0.0-rc.102(typescript@5.7.3)(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.1))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.13)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))
       '@vueuse/core': 13.1.0(vue@3.5.13(typescript@5.7.3))
       ts-debounce: 4.0.0
       vue: 3.5.13(typescript@5.7.3)

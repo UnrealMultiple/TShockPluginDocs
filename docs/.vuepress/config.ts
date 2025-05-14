@@ -62,6 +62,7 @@ export default defineUserConfig({
     docsDir: 'docs',
     home: '/zh/',
     contributors: false,
+    editLink: false,
     // theme-level locales config
     locales: {
       /**
@@ -91,19 +92,20 @@ export default defineUserConfig({
         // sidebar
         sidebar: sidebarZh,
         // page meta
-        editLinkText: '在 GitHub 上编辑此页',
+        editLinkText: '在GitHub上编辑此页',
         lastUpdatedText: '上次更新',
         contributorsText: '贡献者',
         // custom containers
         tip: '提示',
         warning: '注意',
         danger: '警告',
+        previous: '前一篇',
+        next: '下一篇',
         // 404 page
         notFound: [
-          '这里什么都没有',
-          '我们怎么到这来了？',
-          '这是一个 404 页面',
-          '看起来我们进入了错误的链接',
+          '404',
+          '没有找到你要的网页捏...',
+          '掉了591 铂金 60 金 15 银 3 铜',
         ],
         backToHome: '返回首页',
         // a11y

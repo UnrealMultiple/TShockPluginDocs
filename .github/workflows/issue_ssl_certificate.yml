@@ -1,7 +1,7 @@
 name: Issue SSL certificate
 on:
-  schedule: # execute every 24 hours
-    - cron: '35 6 * * *'
+  schedule:
+    - cron: '0 0 */3 * *'
   workflow_dispatch:
 
 env:

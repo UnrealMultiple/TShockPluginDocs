@@ -99,7 +99,7 @@ export default defineUserConfig({
         tip: '提示',
         warning: '注意',
         danger: '警告',
-        previous: '前一篇',
+        prev: '上一篇',
         next: '下一篇',
         // 404 page
         notFound: [

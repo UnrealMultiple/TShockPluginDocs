@@ -1,0 +1,16 @@
+{
+  "name": "TShock中文插件库",
+  "short_name": "TShockPlugins",
+  "description": "TShock中文插件库的文档站",
+  "start_url": "/zh/guide/get-start.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#3eaf7c",
+  "icons": [
+    {
+      "src": "images/icons/boom.png",
+      "sizes": "26x26",
+      "type": "image/png"
+    }
+  ]
+}

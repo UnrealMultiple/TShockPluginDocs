@@ -12,8 +12,8 @@ export const head: HeadConfig[] = [
   ['link', {
     rel: 'icon',
     type: 'image/png',
-    sizes: '32x32',
-    href: '/images/icons/icon-32.png'
+    sizes: '26x26',
+    href: '/images/icons/boom.png'
   }],
   ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
   ['meta', { name: 'application-name', content: 'TShock中文插件库' }],

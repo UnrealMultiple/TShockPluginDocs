@@ -61,6 +61,12 @@ export default defineUserConfig({
     docsRepo: 'UnrealMultiple/TShockPluginDocs',
     docsDir: 'docs',
     home: '/zh/',
+    head: [
+        [
+           'link', { rel: 'icon', href: '/favicon.ico' }
+        ]
+    ],
+    
     contributors: false,
     editLink: false,
     // theme-level locales config
@@ -105,7 +111,7 @@ export default defineUserConfig({
         notFound: [
           '404',
           '没有找到你要的网页捏...',
-          '掉了591 铂金 60 金 15 银 3 铜',
+          '但是掉了591 铂金 60 金 15 银 3 铜',
         ],
         backToHome: '返回首页',
         // a11y

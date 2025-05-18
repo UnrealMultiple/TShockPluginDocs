@@ -8,7 +8,7 @@
   "theme_color": "#3eaf7c",
   "icons": [
     {
-      "src": "images/icons/boom.png",
+      "src": "/images/icons/boom.png",
       "sizes": "26x26",
       "type": "image/png"
     }

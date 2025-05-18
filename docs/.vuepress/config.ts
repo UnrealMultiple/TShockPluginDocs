@@ -61,10 +61,7 @@ export default defineUserConfig({
     docsRepo: 'UnrealMultiple/TShockPluginDocs',
     docsDir: 'docs',
     home: '/zh/',
-    head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['link', { rel: 'apple-touch-icon', href: '/images/icons/boom.png' }]
-  ],
+    
     
     contributors: false,
     editLink: false,

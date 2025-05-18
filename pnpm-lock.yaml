@@ -49,8 +49,8 @@ importers:
         specifier: ^1.9.10
         version: 1.9.10(@vue/compiler-sfc@3.5.14)(lodash@4.17.21)(prettier@3.5.3)
       '@vuepress/helper':
-        specifier: 2.0.0-rc.98
-        version: 2.0.0-rc.98(typescript@5.7.3)(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.1))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.14)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))
+        specifier: 2.0.0-rc.105
+        version: 2.0.0-rc.105(typescript@5.7.3)(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.1))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.14)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))
       '@vuepress/plugin-icon':
         specifier: 2.0.0-rc.101
         version: 2.0.0-rc.101(markdown-it@14.1.0)(typescript@5.7.3)(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.3)(sass-embedded@1.85.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.1))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.14)(esbuild@0.14.7)(typescript@5.7.3))(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))
@@ -8341,7 +8341,7 @@ snapshots:
     dependencies:
       '@babel/template': 7.25.9
       '@babel/traverse': 7.26.7
-      '@babel/types': 7.26.7
+      '@babel/types': 7.27.1
     transitivePeerDependencies:
       - supports-color
 
@@ -9891,7 +9891,7 @@ snapshots:
       '@babel/helper-module-imports': 7.25.9
       '@babel/helper-plugin-utils': 7.26.5
       '@babel/parser': 7.26.7
-      '@vue/compiler-sfc': 3.5.13
+      '@vue/compiler-sfc': 3.5.14
     transitivePeerDependencies:
       - supports-color
 

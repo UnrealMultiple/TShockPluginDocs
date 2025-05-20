@@ -47,7 +47,7 @@
     "@vuepress/core": "^1.9.10",
     "@vuepress/helper": "2.0.0-rc.105",
     "@vuepress/plugin-icon": "2.0.0-rc.101",
-    "@vuepress/plugin-markdown-ext": "2.0.0-rc.98",
+    "@vuepress/plugin-markdown-ext": "2.0.0-rc.105",
     "@vuepress/plugin-markdown-hint": "2.0.0-rc.105",
     "@vuepress/plugin-redirect": "2.0.0-rc.98",
     "add": "^2.0.6",

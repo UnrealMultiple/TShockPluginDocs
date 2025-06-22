@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/bbb4a2f9-3bf2-47e2-8591-2f0db2b26879)# TerrariaAI参考表格
+# TerrariaAI参考表格
 
 ### 本AI表由tykx35117,店员,阿巴与烧饼共同测试出来
 

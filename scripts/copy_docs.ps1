@@ -34,9 +34,14 @@ $jsonContent = Get-Content -Path $(Join-Repo-Root 'TShockPlugin/.config/submodul
 foreach($submodule in $jsonContent.submodules)
 {   
     if (-not [string]::IsNullOrEmpty($submodule.readme)) {
+        $sourcePath = $(Join-Repo-Root 'TShockPlugin' $submodule.readme)
         $destPath = $(Join-Repo-Root 'docs' 'zh' 'guide' ($submodule.name + ".md"))
-        Copy-Item -Path $(Join-Repo-Root 'TShockPlugin' $submodule.readme) -Destination $destPath
-        Update-Markdown-Links -FilePath $destPath
+        if (Test-Path $sourcePath) {
+            Copy-Item -Path $sourcePath -Destination $destPath -ErrorAction SilentlyContinue
+            if (Test-Path $destPath) {
+                Update-Markdown-Links -FilePath $destPath
+            }
+        }
     }
 }
 
@@ -44,14 +49,16 @@ foreach ($p in @(Get-ChildItem $(Join-Repo-Root TShockPlugin/src/**/*.csproj))) 
     $defaultFile = Join-Path $p.Directory "README.md"
     $destPath = $(Join-Repo-Root 'docs' 'zh' 'guide' ($p.BaseName + '.md'))
     
-    Copy-Item -Path $defaultFile -Destination $destPath
-    Update-Markdown-Links -FilePath $destPath
-    
-    # if (Test-Path $enUsFile) {
-    #     Copy-Item -Path $enUsFile -Destination $(Join-Repo-Root 'docs' 'en' 'guide' ($p.BaseName + '.md'))
-    # } elseif (Test-Path $defaultFile) {
-    #     Copy-Item -Path $defaultFile -Destination $(Join-Repo-Root 'docs' 'en' 'guide' ($p.BaseName + '.md'))
-    # }
+    if (Test-Path $defaultFile) {
+        Copy-Item -Path $defaultFile -Destination $destPath -ErrorAction SilentlyContinue
+        if (Test-Path $destPath) {
+            Update-Markdown-Links -FilePath $destPath
+        }
+    }
 }
 
-Copy-Item -Path $(Join-Repo-Root 'TShockPluginDevelopDocs' 'Document' '*') -Destination $(Join-Repo-Root 'docs' 'zh' 'plugin-dev') -Recurse -Force
+$sourceDocs = $(Join-Repo-Root 'TShockPluginDevelopDocs' 'Document' '*')
+$destDocs = $(Join-Repo-Root 'docs' 'zh' 'plugin-dev')
+if (Test-Path $sourceDocs) {
+    Copy-Item -Path $sourceDocs -Destination $destDocs -Recurse -Force -ErrorAction SilentlyContinue
+}

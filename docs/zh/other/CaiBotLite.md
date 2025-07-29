@@ -1,8 +1,7 @@
 # CaiBotLite 使用指南
 
 > [!IMPORTANT]  
-> CaiBot已经不再提供服务器服务，请您尽快迁移到CaiBotLite  
-> 默认管理员为拉BOT的用户  
+> CaiBotLite进行了重构，需要安装新版适配插件，并且重新添加服务器
 
 ## 📄前言
 
@@ -21,8 +20,12 @@
    ![image](https://github.com/user-attachments/assets/557bbd0a-53f2-4e00-b000-e2e91f34c57d)  
 
 5. 下载适配插件/MOD
-   - TShock插件: [[下载]](http://api.terraria.ink:11434/plugin/get_plugin_zip?assembly_name=CaiBotLite)
+   - TShock插件:
+       - [[TShock 5.9.9]](https://raw.terraria.ink/plugin/[TS599]CaiBotLite.dll)
+       - [[TShock 5.2.4]](https://raw.terraria.ink/plugin/[TS524]CaiBotLite.dll)
+       - [[TShock 5.2.2]](https://raw.terraria.ink/plugin/[TS522]CaiBotLite.dll)
    - TMOD:
+       - [[CaiBotServer]](https://raw.terraria.ink/plugin/CaiBotLiteMod.tmod)
        - [[GitHub]](https://github.com/UnrealMultiple/CaiBotLiteMod/releases/latest/download/CaiBotLiteMod.tmod)
        - [[国内镜像]](https://github.moeyy.xyz/https://github.com/UnrealMultiple/CaiBotLiteMod/releases/latest/download/CaiBotLiteMod.tmod)
 6. 安装适配插件/MOD

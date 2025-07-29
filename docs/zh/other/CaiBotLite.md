@@ -21,9 +21,8 @@
 
 5. 下载适配插件/MOD
    - TShock插件:
-       - [[TShock 5.9.9]](https://raw.terraria.ink/plugin/[TS599]CaiBotLite.dll)
-       - [[TShock 5.2.4]](https://raw.terraria.ink/plugin/[TS524]CaiBotLite.dll)
-       - [[TShock 5.2.2]](https://raw.terraria.ink/plugin/[TS522]CaiBotLite.dll)
+       - [[TShock 6]](https://raw.terraria.ink/plugin/[TS6]CaiBotLite.zip)
+       - [[TShock 5]](https://raw.terraria.ink/plugin/[TS5]CaiBotLite.zip)
    - TMOD:
        - [[CaiBotServer]](https://raw.terraria.ink/plugin/CaiBotLiteMod.tmod)
        - [[GitHub]](https://github.com/UnrealMultiple/CaiBotLiteMod/releases/latest/download/CaiBotLiteMod.tmod)

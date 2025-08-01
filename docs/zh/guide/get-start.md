@@ -14,10 +14,9 @@
 > 许多插件依赖于`LazyAPI`,而`LazyAPI`依赖于`linq2db`。使用本仓库插件前，推荐先安装`LazyAPI.dll`和`linq2db.dll`  
 > 推荐使用`AutoPluginManager`安装本插件库插件，会自动补齐相应的依赖
 
-## 下载 (推荐使用APM安装
-- APM镜像(国内推荐): [Plugins.zip](http://api.terraria.ink:11434/plugin/get_all_plugins)
-- Github发布: [Plugins.zip](https://github.com/UnrealMultiple/TShockPlugin/releases/download/V1.0.0.0/Plugins.zip)
-
+## 下载 (推荐使用APM安装)
+- TShock5: [[TS5]Plugins.zip](http://api.terraria.ink:11434/plugin/get_all_plugins)
+- TShock6: [[TS6]Plugins.zip](http://api.terraria.ink:11434/plugin/get_all_plugins?tshock_version=5.9.9)
 #### AutoPluginManager插件 (推荐)  
      /apm l 列出所有插件  
      /apm i <插件名> 一键安装插件  

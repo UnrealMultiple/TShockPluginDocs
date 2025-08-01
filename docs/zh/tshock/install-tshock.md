@@ -26,7 +26,6 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
 
 ## 开始安装TShock
 1. 我们进入TShock的发布页(可能需要科学上网): https://github.com/Pryaxis/TShock/releases  
-![20250801145530](https://raw.githubusercontent.com/ACaiCat/cai-image/main/20250801145530.png)
 目前TShock主要两个版本TShock6和TShock5两个版本。
 
 | 版本    | 优点                            | 缺点                              |
@@ -34,9 +33,9 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
 | TShock5 | 稳定，使用人多                  | 不支持新插件，未来迁移TShock6方便 |
 | TShock6 | 支持新插件，未来无缝迁移TShock6 | 有一些奇怪Bug                     |
 
-2. 选择对应的版本下载
+1. 选择对应的版本下载
 ![20250801150533](https://raw.githubusercontent.com/ACaiCat/cai-image/main/20250801150533.png)
-
+z
 | 版本        | 平台        |
 | ----------- | ----------- |
 | linux-amd64 | Linux X64   |

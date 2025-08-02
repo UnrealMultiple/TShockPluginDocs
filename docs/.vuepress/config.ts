@@ -61,8 +61,8 @@ export default defineUserConfig({
     docsRepo: 'UnrealMultiple/TShockPluginDocs',
     docsDir: 'docs',
     home: '/zh/',
-    
-    
+
+
     contributors: false,
     editLink: false,
     // theme-level locales config
@@ -144,9 +144,9 @@ export default defineUserConfig({
       },
     },
   },
-  
 
-  
+
+
   // use plugins
   plugins: [
     iconPlugin({
@@ -154,7 +154,7 @@ export default defineUserConfig({
     }),
     markdownHintPlugin({
       hint: true,
-  
+
       alert: true,
     }),
     markdownExtPlugin({
@@ -224,7 +224,7 @@ export default defineUserConfig({
     // only enable shiki plugin in production mode
     isProd
       ? shikiPlugin({
-          langs: ['bash', 'diff', 'json', 'md','json5','csharp','yaml'],
+          langs: ['bash', 'diff', 'json', 'md','json5','csharp','yaml','shell'],
           themes: {light: 'github-light', dark: 'github-dark'},
         })
       : [],

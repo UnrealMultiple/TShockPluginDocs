@@ -226,7 +226,7 @@ export default defineUserConfig({
         light: 'one-light',
         dark: 'one-dark-pro',
       },
-      lineNumbers: false,
+      lineNumbers: true,
       notationDiff: true,
       notationErrorLevel: true,
       notationFocus: true,
@@ -234,7 +234,6 @@ export default defineUserConfig({
       notationWordHighlight: true,
       whitespace: true,
       collapsedLines: false,
-      twoslash: true,
     })
   ],
   alias: {

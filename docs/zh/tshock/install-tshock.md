@@ -16,7 +16,7 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
 1. CPU单核性能中等即可，详细可参考[TShock CPU天梯图](..\other\TShockCPUTest.md)
 2. 2核心足够, 服务器的主逻辑都在主线程上，不是很吃多核性能，所以你买个16核服务器也没用
 3. 内存方面建议4GB+
-4. 网络建议3Mbps+，如果人多(超过10人)建议5Mbps+
+4. 网络建议3 Mbps+，如果人多(超过10人)建议5 Mbps+
 5. 如果追求性价比就是买NAT服务器(端口转发)；如果追求默认7777端口就购买独立IP服务器
 6. 小白推荐Windows Server服务器，老逼登想压缩成本可以用Linux
 7. 硬盘没什么要求
@@ -57,16 +57,22 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
 ### Windows (Windows Server 2022为例)
 1. 在Windows中我们使用**远程桌面连接**来连接服务器，直接在**Windows搜索**即可找到，当然手机也有对应的APP，叫做[Windows APP](https://apkpure.net/cn/windows-app/com.microsoft.rdc.androidx/download)
 
+> [!NOTE]
+> 使用手机Windows App的请打开**存储**和**剪贴板**以方便操作，**显示**按自己需求修改即可  
+> ![f3a4e23c8f02ce35e3839d65dad8d876_720](https://raw.githubusercontent.com/ACaiCat/cai-image/main/f3a4e23c8f02ce35e3839d65dad8d876_720.jpg)  
+> 打开**储存**后，服务器文件资源管理器就会显示手机的内部存储，方便传输文件，当然直接在服务器上下个QQ也是很好的选择。  
+> ![40bb7de490826b64ee16b492fcfe9175](https://raw.githubusercontent.com/ACaiCat/cai-image/main/40bb7de490826b64ee16b492fcfe9175.jpg) 
+
 2. 打开服务器面板，将连接信息粘贴到**远程桌面连接**中  
 ![PixPin_2025-08-01_16-34-34](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-01_16-34-34.gif)
 
-3. 复制我们刚刚下载的TShock包，然后粘贴到服务器桌面上
+1. 复制我们刚刚下载的TShock包，然后粘贴到服务器桌面上
 ![PixPin_2025-08-01_16-40-40](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-01_16-40-40.gif)
 
-4. 新建文件夹，命名为TShock，然后将我们的TShock包解压到文件夹内
+1. 新建文件夹，命名为TShock，然后将我们的TShock包解压到文件夹内
   ![PixPin_2025-08-01_16-43-54](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-01_16-43-54.gif)
 
-5. 安装TShock运行环境
+1. 安装TShock运行环境
   TShock5需要下载.NET 6运行时，TShock6需要下载.NET 9运行时  
   - [TShock 5 .NET6](https://dotnet.microsoft.com/zh-cn/download/dotnet/6.0)
   - [TShock 6 .NET9](https://dotnet.microsoft.com/zh-cn/download/dotnet/9.0)
@@ -89,6 +95,9 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
 1. 安装Tabby
    - 官网：https://tabby.sh/
    - GitHub：https://github.com/Eugeny/tabby/releases/tag/v1.0.223
+  
+> [!NOTE]
+> 手机可以与用**JuiceSSH**+**质感文件(SFTP)** 
 
 2. 使用Tabby SSH连接服务器
    ![PixPin_2025-08-01_17-32-45](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-01_17-32-45.gif)
@@ -141,7 +150,7 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
    ./TShock.Server -lang 7
    ```
    3. 保存启动脚本并退出  
-   按Ctrl+S保存再按Ctrl+X退出
+   按`Ctrl+S`保存再按`Ctrl+X`退出
    4. 给启动脚本添加执行权限
    ```bash
    chmod 777 start.sh
@@ -171,7 +180,7 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
 
 #### **⚡ 5个核心快捷键**（先按 `Ctrl+b`，再按键）  
 1. **`d`** → 退出当前会话（后台运行）  
-2. **`c`** → 新建窗口  
+2. **`[`** → **进入复制(可翻页)模式**（自由选择文本，按 `Enter` 复制）(按`q`退出)
 3. **`%`** → 左右分屏（垂直分割）  
 4. **`"`** → 上下分屏（水平分割）  
 5. **`方向键`** → 切换分屏  
@@ -187,3 +196,17 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
    
 
 ### 简幻欢面板 (非广告)
+1. 注册简幻欢账号
+   ![20250802112621](https://raw.githubusercontent.com/ACaiCat/cai-image/main/20250802112621.png)
+2. 新建TShock实例
+   > [!NOTE]
+   > 目前TShock 6还为发布官方镜像，可以使用羽学提供的第三方镜像替代
+   
+   - TShock 5：
+    ![PixPin_2025-08-02_11-34-06](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-02_11-34-06.gif)
+     
+   - TShock 6：
+    ![PixPin_2025-08-02_11-35-12](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-02_11-35-12.gif)
+
+3. 等待服务器创建任务完成，启动服务器
+   ![PixPin_2025-08-02_11-41-36](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-02_11-41-36.gif)

@@ -54,7 +54,11 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
 > [!CAUTION]
 > 再次提醒请确保你下载的zip压缩包和你的服务器对应版本一致
 
-### Windows (Windows Server 2022为例)
+### Windows
+
+> [!NOTE]
+> 示例使用Windows Server 2022
+
 1. 在Windows中我们使用**远程桌面连接**来连接服务器，直接在**Windows搜索**即可找到，当然手机也有对应的APP，叫做[Windows APP](https://apkpure.net/cn/windows-app/com.microsoft.rdc.androidx/download)
 
 > [!NOTE]
@@ -91,7 +95,11 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
    ![PixPin_2025-08-01_17-25-45](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-01_17-25-45.gif)
    出现选择世界的界面则代表TShock安装成功
 
-### Linux (Ubuntu-22.04)
+### Linux
+
+> [!NOTE]
+> 示例使用Ubuntu-22.04
+
 1. 安装Tabby
    - 官网：https://tabby.sh/
    - GitHub：https://github.com/Eugeny/tabby/releases/tag/v1.0.223

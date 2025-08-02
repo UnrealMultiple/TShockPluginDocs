@@ -230,7 +230,7 @@ export default defineUserConfig({
           line: () => { }
         }
       })
-      : undefined
+      : []
   ],
   alias: {
     '@theme/VPAutoLink.vue': path.resolve(

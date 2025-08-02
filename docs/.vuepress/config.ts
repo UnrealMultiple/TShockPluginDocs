@@ -224,10 +224,13 @@ export default defineUserConfig({
     // only enable shiki plugin in production mode
     isProd
       ? shikiPlugin({
-          langs: ['bash', 'diff', 'json', 'md','json5','csharp','yaml','shell'],
-          themes: {light: 'github-light', dark: 'github-dark'},
-        })
-      : [],
+        langs: ['bash', 'diff', 'json', 'md', 'json5', 'csharp', 'yaml', 'shell'],
+        themes: { light: 'github-light', dark: 'github-dark' },
+        transformers: {
+          line: () => { }
+        }
+      })
+      : undefined
   ],
   alias: {
     '@theme/VPAutoLink.vue': path.resolve(

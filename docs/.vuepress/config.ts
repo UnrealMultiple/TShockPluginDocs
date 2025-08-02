@@ -221,14 +221,21 @@ export default defineUserConfig({
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components'),
     }),
-    // only enable shiki plugin in production mode
-    isProd
-      ? shikiPlugin({
-          langs: ['bash', 'diff', 'json', 'md','json5','csharp','yaml','shell'],
-          themes: {light: 'github-light', dark: 'github-dark'},
-          lineNumbers: false
-        })
-      : [],
+    shikiPlugin({
+      themes: {
+        light: 'one-light',
+        dark: 'one-dark-pro',
+      },
+      lineNumbers: false,
+      notationDiff: true,
+      notationErrorLevel: true,
+      notationFocus: true,
+      notationHighlight: true,
+      notationWordHighlight: true,
+      whitespace: true,
+      collapsedLines: false,
+      twoslash: true,
+    })
   ],
   alias: {
     '@theme/VPAutoLink.vue': path.resolve(

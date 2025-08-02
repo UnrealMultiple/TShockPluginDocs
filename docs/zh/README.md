@@ -7,6 +7,11 @@ actions:
     icon: unplug
     link: /zh/guide/get-start.md
     type: primary
+  
+  - text: TShock教程
+    icon: book-check
+    link: /zh/tshock/get-start.md
+    type: primary
 
   - text: 插件开发
     icon: code-xml

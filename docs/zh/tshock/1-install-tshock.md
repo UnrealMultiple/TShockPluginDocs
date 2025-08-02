@@ -13,7 +13,7 @@
 
 ## 选择服务器 (小白推荐云服务，不推荐家里云)
 TShock对服务器的性能要求并不高，注意以下几点即可:
-1. CPU单核性能中等即可，详细可参考[TShock CPU天梯图](..\other\TShockCPUTest.md)
+1. CPU单核性能中等即可，详细可参考[TShock CPU天梯图](/docs/zh/other/TShockCPUTest.md)
 2. 2核心足够, 服务器的主逻辑都在主线程上，不是很吃多核性能，所以你买个16核服务器也没用
 3. 内存方面建议4GB+
 4. 网络建议3 Mbps+，如果人多(超过10人)建议5 Mbps+

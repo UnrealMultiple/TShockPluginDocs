@@ -21,10 +21,10 @@
 
 5. 下载适配插件/MOD
    - TShock插件:
-       - [[TShock 6]](https://raw.terraria.ink/plugin/[TS6]CaiBotLite.zip)
-       - [[TShock 5]](https://raw.terraria.ink/plugin/[TS5]CaiBotLite.zip)
+       - [[TShock 6]](https://api.terraria.ink:22338/plugin/[TS6]CaiBotLite.zip)
+       - [[TShock 5]](https://api.terraria.ink:22338/plugin/[TS5]CaiBotLite.zip)
    - TMOD:
-       - [[CaiBotServer]](https://raw.terraria.ink/plugin/CaiBotLiteMod.tmod)
+       - [[CaiBotServer]](https://api.terraria.ink:22338/plugin/CaiBotLiteMod.tmod)
        - [[GitHub]](https://github.com/UnrealMultiple/CaiBotLiteMod/releases/latest/download/CaiBotLiteMod.tmod)
        - [[国内镜像]](https://github.moeyy.xyz/https://github.com/UnrealMultiple/CaiBotLiteMod/releases/latest/download/CaiBotLiteMod.tmod)
 6. 安装适配插件/MOD

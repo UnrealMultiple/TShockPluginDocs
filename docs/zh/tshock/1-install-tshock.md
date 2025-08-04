@@ -231,6 +231,32 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
   - TShock 6：
     ![PixPin_2025-08-04_23-14-33](https://github.com/user-attachments/assets/50e06227-f0ae-4120-9c40-e07a9afcfcd5)
     2.1. 进入控制台后，点击`进入控制台`，点击`文件管理`,通过`启动脚本(可修改).sh`来进行环境部署
-    
+    ![PixPin_2025-08-04_23-20-15](https://github.com/user-attachments/assets/7541391f-38fe-4c9a-b9f2-f8038df257a0)
+    2.2. 下载TShock包和.NET9运行时
+    ![PixPin_2025-08-05_00-27-28](https://github.com/user-attachments/assets/29b3b9d6-61a9-4b24-a618-6923157d453f)
+    > [!NOTE]
+    > 你可以使用Linux的方式执行sh内的命令来下载内容，但是极其缓慢，或在本地下载后上传文件至面板（可使用sftp速度较快）。
+    2.3. 在`启动脚本(可修改).sh`内编写语句，解压TShock包 (注意zip名字可能会有变化，自行修改)
+     ```shell
+      apt install unzip
+      unzip TShock-Beta-linux-x64-Release.zip
+      tar -xvf TShock-Beta-linux-x64-Release.tar
+      rm TShock-Beta-linux-x64-Release.zip TShock-Beta-linux-x64-Release.tar
+     ```
+    ![PixPin_2025-08-05_00-31-03](https://github.com/user-attachments/assets/354ba3e5-b73e-43b8-9b67-3a1dab5033bd)
+3. 修改`启动脚本(可修改).sh`内语句，启动TShock
+  - TShock 5：无需修改，可在分号处适当添加回车键，方便后续修改启动参数
+  - TShock 6：根据右侧端口以及刚刚下载的.NET运行时压缩包，适当更改如下内容
+    ```shell
+      mkdir -p /usr/rain/dotnet && tar zxf dotnet-runtime-9.0.2-linux-x64.tar.gz -C /usr/rain/dotnet;
+      export DOTNET_ROOT=/usr/rain/dotnet;
+      export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/rain/dotnet;
+      ./TShock.Server -ip 0.0.0.0 -port 23333
+    ```
+![PixPin_2025-08-05_00-51-17](https://github.com/user-attachments/assets/c822bd48-5f25-468d-8a4e-e92246632b2f)
+4. 最后点击“启动”即可
+
+
+
     
 

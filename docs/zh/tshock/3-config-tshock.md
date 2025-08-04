@@ -421,11 +421,40 @@ TShock主配置文件位于`tshock/config.json`，使用VS Code打开它
 > [!NOTE]
 > 以上是正常开荒服的推荐配置，但是还是需要按需修改的
 
+
+
+## 添加推荐插件
+
+1. 下载插件 (按照自己的TShock版本)
+
+- APM
+  - [TS5](http://api.terraria.ink:11434/plugin/get_plugin_zip?assembly_name=AutoPluginManager)
+  - [TS6](http://api.terraria.ink:11434/plugin/get_plugin_zip?assembly_name=AutoPluginManager&tshock_version=5.9.9)
+
+- Omni
+  - [APM](http://api.terraria.ink:11434/plugin/get_plugin_zip?assembly_name=Chireiden.TShock.Omni&tshock_version=5.9.9)
+  - [GitHub](https://github.com/sgkoishi/yaaiomni/releases)
+
+- HelpPlus
+  - [TS5](http://api.terraria.ink:11434/plugin/get_plugin_zip?assembly_name=HelpPlus)
+  - [TS6](http://api.terraria.ink:11434/plugin/get_plugin_zip?assembly_name=HelpPlus&tshock_version=5.9.9)
+
+- Ezperm
+  - [TS5](http://api.terraria.ink:11434/plugin/get_plugin_zip?assembly_name=Ezperm)
+  - [TS6](http://api.terraria.ink:11434/plugin/get_plugin_zip?assembly_name=Ezperm&tshock_version=5.9.9)
+  
+- ForceChinese (面板服无中文装)
+  - TShock群文件
+
+1. 解压插件包，并且将`.dll`和`.pdb`文件放入`ServerPlugins`文件夹
+  ![PixPin_2025-08-04_21-54-47](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-04_21-54-47.gif)
+
+1. 重启服务器
+
 ## 添加原版权限
 
-在控制台执行
-```
-/group addperm default tshock.world.movenpc,tshock.world.worldupgrades,tshock.specialeffects.*,tshock.world.time.usemoondial,tshock.world.time.usesundial,tshock.tp.pylon,tshock.tp.demonconch,tshock.tp.magicconch,tshock.tp.tppotion,tshock.tp.rod,tshock.tp.wormhole,tshock.npc.startdd2,tshock.npc.spawnpets,tshock.npc.summonboss,tshock.npc.startinvasion,tshock.npc.hurttown
-```
-为TShock添加原版权限
+添加Ezperm插件后我们可以使用`/inperms`，即可添加原版默认权限  
+
+## 结束
+至此，你的原版TShock服务器已经可以正式开张，如果还需要插件等进阶内容请阅读接下来的章节
 

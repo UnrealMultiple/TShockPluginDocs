@@ -135,3 +135,6 @@ sudo netfilter-persistent save
 在服务器控制台执行`/user group <你的名字> owner`即可得到服主权限   
 
 ![PixPin_2025-08-02_15-47-54](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-02_15-47-54.gif)
+
+> [!CAUTION]
+> 到这里并不代表你可以正式开服了，请你认证完成接下来的章节。

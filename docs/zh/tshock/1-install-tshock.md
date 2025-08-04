@@ -226,6 +226,7 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
 2. 新建TShock实例环境
    > [!NOTE]
    > 目前TShock 6还未发布官方镜像，可以跟随教程手动部署环境
+   
   - TShock 5：
     ![PixPin_2025-08-04_23-03-11](https://github.com/user-attachments/assets/0ecf35d8-18e6-4fdc-8bfe-5e146e5fe371)
   - TShock 6：
@@ -236,6 +237,7 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
     ![PixPin_2025-08-05_00-27-28](https://github.com/user-attachments/assets/29b3b9d6-61a9-4b24-a618-6923157d453f)
     > [!NOTE]
     > 你可以使用Linux的方式执行sh内的命令来下载内容，但是极其缓慢，或在本地下载后上传文件至面板（可使用sftp速度较快）。
+    
     - 在`启动脚本(可修改).sh`内编写语句，解压TShock包 (注意zip名字可能会有变化，自行修改)
      ```shell
       apt install unzip

@@ -2,7 +2,7 @@
 
 ## 基本知识
 ### 网络环境
-本教程用到的部分GitHub链接等可能需要科学的上网环境，如果下载文件缓慢可以使用[GitHub Proxy](https://github.akams.cn/)镜像下载。  
+本教程用到的部分GitHub链接等可能需要科学的上网环境，如果下载文件缓慢可以使用[GitHub Proxy](https://github.akams.cn/)镜像下载，如果进入GitHub缓慢可以使用[Steam++](https://steampp.net/)进行加速。  
 ![PixPin_2025-08-01_14-16-08](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-01_14-16-08.gif)
 ### 截图
 这里首推QQ自带的截图工具，点击聊天窗口的剪刀，或者默认快捷键`Ctrl+Alt+A`截图。当然如果你会使用[PixPin](https://pixpin.cn/)等更强大的截图工具也很好。  
@@ -208,7 +208,7 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
    ![20250802112621](https://raw.githubusercontent.com/ACaiCat/cai-image/main/20250802112621.png)
 2. 新建TShock实例
    > [!NOTE]
-   > 目前TShock 6还为发布官方镜像，可以使用羽学提供的第三方镜像替代
+   > 目前TShock 6还未发布官方镜像，可以使用羽学提供的第三方镜像替代
    
    - TShock 5：
     ![PixPin_2025-08-02_11-34-06](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-02_11-34-06.gif)
@@ -218,3 +218,19 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
 
 3. 等待服务器创建任务完成，启动服务器
    ![PixPin_2025-08-02_11-41-36](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-02_11-41-36.gif)
+
+### 雨云MCSM面板(非广告)
+- 由于MCSM面板在TShock用的较少，这里拿雨云举例
+1. 注册雨云账号并获取一台游戏云（积分免费兑换或购买）
+   ![PixPin_2025-08-04_22-56-08](https://github.com/user-attachments/assets/1ef6db85-b29f-4a92-a75d-0e3ad6fd359d)
+2. 新建TShock实例环境
+   > [!NOTE]
+   > 目前TShock 6还未发布官方镜像，可以跟随教程手动部署环境
+  - TShock 5：
+    ![PixPin_2025-08-04_23-03-11](https://github.com/user-attachments/assets/0ecf35d8-18e6-4fdc-8bfe-5e146e5fe371)
+  - TShock 6：
+    ![PixPin_2025-08-04_23-14-33](https://github.com/user-attachments/assets/50e06227-f0ae-4120-9c40-e07a9afcfcd5)
+    2.1. 进入控制台后，点击`进入控制台`，点击`文件管理`,通过`启动脚本(可修改).sh`来进行环境部署
+    
+    
+

@@ -284,7 +284,7 @@ TShock主配置文件位于`tshock/config.json`，使用VS Code打开它
     "SoftcoreOnly": false, // 仅允许软核角色加入
     "DisableBuild": false, // 禁止建筑
     "DisableHardmode": false, // 禁止进入困难模式
-    "DisableDungeonGuardian": false, // 禁止召唤骷髅王，已弃用
+    "DisableDungeonGuardian": false, // 已弃用-禁止召唤骷髅王
     "DisableClownBombs": false, // 关闭小丑炸弹
     "DisableSnowBalls": false, // 关闭雪球
     "DisableTombstones": false, // 关闭墓碑掉落
@@ -294,10 +294,10 @@ TShock主配置文件位于`tshock/config.json`，使用VS Code打开它
     "MaxRangeForDisabled": 10, // 玩家被限制行动时可移动的最大距离
     "RegionProtectChests": false, // 保护区域内的箱子
     "RegionProtectGemLocks": true, // 保护区域内的宝石锁
-    "IgnoreProjUpdate": false, // 忽略弹幕更新的检测，无效
+    "IgnoreProjUpdate": false, // 无效-忽略弹幕更新的检测
     "IgnoreProjKill": false, // 忽略弹幕Kill检测
-    "AllowCutTilesAndBreakables": false, // 允许玩家在无权建筑的地方打破易碎品 (eg. 罐子, 草)，失效
-    "AllowIce": false, // 允许玩家在无权建筑的地方放置冰
+    "AllowCutTilesAndBreakables": false, // 失效-允许玩家在无权建筑的地方打破易碎品 (eg. 罐子, 草)
+    "AllowIce": false, // 无效-允许玩家在无权建筑的地方放置冰
     "AllowCrimsonCreep": true, // 允许猩红蔓延
     "AllowCorruptionCreep": true, // 允许腐化蔓延
     "AllowHallowCreep": true, // 允许神圣蔓延
@@ -315,7 +315,7 @@ TShock主配置文件位于`tshock/config.json`，使用VS Code打开它
     "AnonymousBossInvasions": true, // 广播Boss和入侵的召唤者
     "MaxHP": 600, // 允许玩家最大生命值 (tshock.ignore.hp跳过检查) (超过会被限制行动)
     "MaxMP": 400, // 允许玩家最大魔力值 (tshock.ignore.mp跳过检查) (超过会被限制行动)
-    "BombExplosionRadius": 5, // 爆炸物能影响液体的最大距离 (液体反作弊) (单位：图格)
+    "BombExplosionRadius": 5, // 无效-爆炸物能影响液体的最大距离 (液体反作弊) (单位：图格)
     "GiveItemsDirectly": false, // 直接将物品放入玩家背包 (需要启用SSC，否则无效) true则直接修改玩家背包放入物品(无捡物品声音)，false则以掉落物的显示给予玩家物品(捡物品声音)
     "DefaultRegistrationGroupName": "default", // 新注册用户默认的组名
     "DefaultGuestGroupName": "guest", // 未登录玩家默认的组名

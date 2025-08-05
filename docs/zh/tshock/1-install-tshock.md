@@ -2,7 +2,7 @@
 
 ## 基本知识
 ### 网络环境
-本教程用到的部分GitHub链接等可能需要科学的上网环境，如果下载文件缓慢可以使用[GitHub Proxy](https://github.akams.cn/)镜像下载。  
+本教程用到的部分GitHub链接等可能需要科学的上网环境，如果下载文件缓慢可以使用[GitHub Proxy](https://github.akams.cn/)镜像下载，如果进入GitHub缓慢可以使用[Steam++](https://steampp.net/)进行加速。  
 ![PixPin_2025-08-01_14-16-08](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-01_14-16-08.gif)
 ### 截图
 这里首推QQ自带的截图工具，点击聊天窗口的剪刀，或者默认快捷键`Ctrl+Alt+A`截图。当然如果你会使用[PixPin](https://pixpin.cn/)等更强大的截图工具也很好。  
@@ -208,7 +208,7 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
    ![20250802112621](https://raw.githubusercontent.com/ACaiCat/cai-image/main/20250802112621.png)
 2. 新建TShock实例
    > [!NOTE]
-   > 目前TShock 6还为发布官方镜像，可以使用羽学提供的第三方镜像替代
+   > 目前TShock 6还未发布官方镜像，可以使用羽学提供的第三方镜像替代
    
    - TShock 5：
     ![PixPin_2025-08-02_11-34-06](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-02_11-34-06.gif)
@@ -218,3 +218,47 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
 
 3. 等待服务器创建任务完成，启动服务器
    ![PixPin_2025-08-02_11-41-36](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-02_11-41-36.gif)
+
+### 雨云MCSM面板(非广告)
+- 由于MCSM面板在TShock用的较少，这里拿雨云举例
+1. 注册雨云账号并获取一台游戏云（积分免费兑换或购买）
+   ![PixPin_2025-08-04_22-56-08](https://github.com/user-attachments/assets/1ef6db85-b29f-4a92-a75d-0e3ad6fd359d)
+2. 新建TShock实例环境
+   > [!NOTE]
+   > 目前TShock 6还未发布官方镜像，可以跟随教程手动部署环境
+   
+  - TShock 5：
+    ![PixPin_2025-08-04_23-03-11](https://github.com/user-attachments/assets/0ecf35d8-18e6-4fdc-8bfe-5e146e5fe371)
+  - TShock 6：
+    ![PixPin_2025-08-04_23-14-33](https://github.com/user-attachments/assets/50e06227-f0ae-4120-9c40-e07a9afcfcd5)
+    - 进入控制台后，点击`进入控制台`，点击`文件管理`,通过`启动脚本(可修改).sh`来进行环境部署
+    ![PixPin_2025-08-04_23-20-15](https://github.com/user-attachments/assets/7541391f-38fe-4c9a-b9f2-f8038df257a0)
+    - 下载TShock包和.NET9运行时
+    ![PixPin_2025-08-05_00-27-28](https://github.com/user-attachments/assets/29b3b9d6-61a9-4b24-a618-6923157d453f)
+    > [!NOTE]
+    > 你可以使用Linux的方式执行sh内的命令来下载内容，但是极其缓慢，或在本地下载后上传文件至面板（可使用sftp速度较快）。
+    
+    - 在`启动脚本(可修改).sh`内编写语句，解压TShock包 (注意zip名字可能会有变化，自行修改)
+     ```shell
+      apt install unzip
+      unzip TShock-Beta-linux-x64-Release.zip
+      tar -xvf TShock-Beta-linux-x64-Release.tar
+      rm TShock-Beta-linux-x64-Release.zip TShock-Beta-linux-x64-Release.tar
+     ```
+    ![PixPin_2025-08-05_00-31-03](https://github.com/user-attachments/assets/354ba3e5-b73e-43b8-9b67-3a1dab5033bd)
+3. 修改`启动脚本(可修改).sh`内语句，启动TShock
+  - TShock 5：无需修改，可在分号处适当添加回车键，方便后续修改启动参数
+  - TShock 6：根据右侧端口以及刚刚下载的.NET运行时压缩包，适当更改如下内容
+    ```shell
+      mkdir -p /usr/rain/dotnet && tar zxf dotnet-runtime-9.0.2-linux-x64.tar.gz -C /usr/rain/dotnet;
+      export DOTNET_ROOT=/usr/rain/dotnet;
+      export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/rain/dotnet;
+      ./TShock.Server -ip 0.0.0.0 -port 23333
+    ```
+![PixPin_2025-08-05_00-51-17](https://github.com/user-attachments/assets/c822bd48-5f25-468d-8a4e-e92246632b2f)
+4. 最后点击“启动”即可
+
+
+
+    
+

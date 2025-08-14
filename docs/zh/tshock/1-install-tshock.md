@@ -247,13 +247,20 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
      ```
     ![PixPin_2025-08-05_00-31-03](https://github.com/user-attachments/assets/354ba3e5-b73e-43b8-9b67-3a1dab5033bd)
 3. 修改`启动脚本(可修改).sh`内语句，启动TShock
-  - TShock 5：无需修改，可在分号处适当添加回车键，方便后续修改启动参数
-  - TShock 6：根据右侧端口以及刚刚下载的.NET运行时压缩包，适当更改如下内容
+  - TShock 5：可在分号处适当添加回车键，方便后续修改启动参数，可适当删除启动参数以同步教程教学，仅留`-ip`至如下效果
+  - 注意将`dotnet-runtime-6.0.2-linux-x64.tar.gz`修改为你文件目录该.NET运行时压缩包名字
+    ```shell
+      mkdir -p /usr/rain/dotnet && tar zxf dotnet-runtime-6.0.2-linux-x64.tar.gz -C /usr/rain/dotnet;
+      export DOTNET_ROOT=/usr/rain/dotnet;
+      export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/rain/dotnet;
+      ./TShock.Server -ip 0.0.0.0
+    ```
+  - TShock 6：根据刚刚下载的.NET运行时压缩包名字，适当更改如下内容
     ```shell
       mkdir -p /usr/rain/dotnet && tar zxf dotnet-runtime-9.0.2-linux-x64.tar.gz -C /usr/rain/dotnet;
       export DOTNET_ROOT=/usr/rain/dotnet;
       export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/rain/dotnet;
-      ./TShock.Server -ip 0.0.0.0 -port 23333
+      ./TShock.Server -ip 0.0.0.0
     ```
 ![PixPin_2025-08-05_00-51-17](https://github.com/user-attachments/assets/c822bd48-5f25-468d-8a4e-e92246632b2f)
 4. 最后点击“启动”即可

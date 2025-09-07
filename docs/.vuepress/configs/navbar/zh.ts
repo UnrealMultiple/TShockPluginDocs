@@ -20,6 +20,10 @@ export const navbarZh: NavbarOptions = [
     link: '/zh/plugin-dev/get-start.html'
   },
   {
+    text: 'TShock Wiki 镜像',
+    link: '/zh/tshock-wiki/get-start.html'
+  },
+  {
     text: '其他文档',
     link: '/zh/other/get-start.html'
   },

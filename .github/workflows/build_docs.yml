@@ -34,6 +34,39 @@ jobs:
             git push
           fi
 
+      - name: Update TShock Wiki
+        continue-on-error: true
+        run: |
+          # 更新 TShock Wiki 中文内容
+          cd docs/zh
+          rm -rf tshock-wiki
+          git clone https://github.com/Pryaxis/TShock.wiki.git tshock-wiki
+          
+          cd tshock-wiki
+          
+          # 删除非中文文档
+          find . -name "*.md" -not -name "*(中文)*" -not -name "get-start.md" -not -name "README-维护说明.md" -delete
+          
+          # 修复中文文档标题
+          for file in $(find . -name "*(中文)*.md"); do
+            if [ -f "$file" ]; then
+              content=$(cat "$file")
+              # 检查是否已有一级标题
+              if ! echo "$content" | grep -q "^# "; then
+                title=$(basename "$file" .md | sed 's/(中文)//g')
+                echo -e "# $title\n\n$content" > "$file"
+                echo "已为 $file 添加标题: # $title"
+              fi
+            fi
+          done
+          
+          # 确保入口文件存在
+          if [ ! -f "get-start.md" ]; then
+            echo "⚠ 入口文件不存在"
+          fi
+          
+          cd ../../..
+
       - name: Copy Docs
         shell: pwsh
         run: |

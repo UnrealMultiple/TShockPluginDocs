@@ -18,6 +18,11 @@ actions:
     link: /zh/plugin-dev/get-start.md
     type: primary
 
+  - text: TShock Wiki 镜像
+    icon: book-open
+    link: /zh/tshock-wiki/get-start.md
+    type: primary
+
   - text: 其他文档
     icon: briefcase
     link: /zh/other/get-start.md

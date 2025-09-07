@@ -37,12 +37,19 @@ jobs:
       - name: Update TShock Wiki
         continue-on-error: true
         run: |
-          # 更新 TShock Wiki 中文内容
-          cd docs/zh
-          rm -rf tshock-wiki
-          git clone https://github.com/Pryaxis/TShock.wiki.git tshock-wiki
+          # 更新 TShock Wiki 子模块
+          git submodule update --remote TShockWiki
           
-          cd tshock-wiki
+          # 创建目标目录
+          mkdir -p docs/zh/tshock-wiki
+          
+          # 从子模块复制文件
+          cp -r TShockWiki/* docs/zh/tshock-wiki/
+          
+          # 删除 .git 目录
+          rm -rf docs/zh/tshock-wiki/.git
+          
+          cd docs/zh/tshock-wiki
           
           # 删除非中文文档
           find . -name "*.md" -not -name "*(中文)*" -not -name "get-start.md" -not -name "README-维护说明.md" -delete
@@ -62,7 +69,7 @@ jobs:
           
           # 确保入口文件存在
           if [ ! -f "get-start.md" ]; then
-            echo "⚠ 入口文件不存在"
+            echo "⚠ 入口文件不存在，跳过处理"
           fi
           
           cd ../../..

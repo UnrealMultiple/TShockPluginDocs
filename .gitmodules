@@ -1,9 +1,6 @@
 [submodule "TShockPlugin"]
 	path = TShockPlugin
 	url = https://github.com/UnrealMultiple/TShockPlugin.git
-[submodule "TShockPluginDevelopDocs"]
-	path = TShockPluginDevelopDocs
-	url = https://github.com/UnrealMultiple/TShockPluginDevelopDocs.git
 [submodule "TShockWiki"]
 	path = TShockWiki
 	url = https://github.com/Pryaxis/TShock.wiki.git

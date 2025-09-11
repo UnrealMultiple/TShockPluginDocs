@@ -119,9 +119,8 @@ TShock中权限管理以组为单位，一个组中有多个权限，在同一�
   - [TS5](http://api.terraria.ink:11434/plugin/get_plugin_zip?assembly_name=HelpPlus)
   - [TS6](http://api.terraria.ink:11434/plugin/get_plugin_zip?assembly_name=HelpPlus&tshock_version=5.9.9)
 
-2. 使用命令`/help <命令>`即可查询到对应命令所需的权限
+2. 使用命令`/help <命令>`即可查询到对应命令所需的权限  
    ![](https://github.com/user-attachments/assets/50076bbd-cd82-4104-ba94-fb1982d12a8d)
-
 > [!IMPORTANT]
 > HelpPlus只能查询到命令的基本权限，详细的权限请查看插件文档和TShock文档
 

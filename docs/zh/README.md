@@ -12,12 +12,7 @@ actions:
     icon: book-check
     link: /zh/tshock/get-start.md
     type: primary
-
-  - text: 插件开发
-    icon: code-xml
-    link: /zh/plugin-dev/get-start.md
-    type: primary
-
+  
   - text: TShock Wiki 镜像
     icon: book-open
     link: /zh/tshock-wiki/get-start.md
@@ -27,13 +22,11 @@ actions:
     icon: briefcase
     link: /zh/other/get-start.md
     type: primary
-
-
-
-  - text: 代码仓库
-    icon: github
-    link: https://github.com/UnrealMultiple/TShockPlugin
-    type: secondary
+  
+  - text: 插件开发
+    icon: code-xml
+    link: /zh/plugin-dev/get-start.md
+    type: primary
 
 features:
   - title: 社区支持

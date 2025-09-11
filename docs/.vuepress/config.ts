@@ -8,7 +8,6 @@ import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 import { getDirname, path } from 'vuepress/utils'
-import { markdownExtPlugin } from '@vuepress/plugin-markdown-ext'
 import { markdownHintPlugin } from '@vuepress/plugin-markdown-hint'
 import { redirectPlugin } from '@vuepress/plugin-redirect'
 import { iconPlugin } from '@vuepress/plugin-icon'
@@ -37,7 +36,6 @@ export default defineUserConfig({
 
   // site-level locales config
   locales: {
-
     '/zh/': {
       lang: 'zh-CN',
       title: 'TShock中文插件库',
@@ -63,55 +61,34 @@ export default defineUserConfig({
     docsDir: 'docs',
     home: '/zh/',
 
-
     contributors: false,
     editLink: false,
     // theme-level locales config
     locales: {
-      /**
-       * English locale config
-       *
-       * As the default locale of @vuepress/theme-default is English,
-       * we don't need to set all of the locale fields
-       */
       '/en/': {
-        // navbar
         navbar: navbarEn,
-        // sidebar
         sidebar: sidebarEn,
-        // page meta
-        //editLinkText: 'Edit this page on GitHub',
       },
-
-      /**
-       * Chinese locale config
-       */
       '/zh/': {
-      // navbar
         navbar: navbarZh,
         selectLanguageName: '简体中文',
         selectLanguageText: '选择语言',
         selectLanguageAriaLabel: '选择语言',
-        // sidebar
         sidebar: sidebarZh,
-        // page meta
         editLinkText: '在GitHub上编辑此页',
         lastUpdatedText: '上次更新',
         contributorsText: '贡献者',
-        // custom containers
         tip: '提示',
         warning: '注意',
         danger: '警告',
         prev: '上一篇',
         next: '下一篇',
-        // 404 page
         notFound: [
           '404',
           '没有找到你要的网页捏...',
           '但是掉了591 铂金 60 金 15 银 3 铜',
         ],
         backToHome: '返回首页',
-        // a11y
         openInNewWindow: '在新窗口打开',
         toggleColorMode: '切换颜色模式',
         toggleSidebar: '切换侧边栏',
@@ -119,10 +96,8 @@ export default defineUserConfig({
     },
 
     themePlugins: {
-      // only enable git plugin in production mode
       git: true,
-      // use shiki plugin in production mode instead
-      prismjs: true,
+      prismjs: false, // 改为 false，因为我们要用 shiki
     },
   }),
 
@@ -130,7 +105,6 @@ export default defineUserConfig({
   markdown: {
     importCode: {
       handleImportPath: (importPath) => {
-        // handle @vuepress packages import path
         if (importPath.startsWith('@vuepress/')) {
           const packageName = importPath.match(/^(@vuepress\/[^/]*)/)![1]
           return importPath
@@ -146,25 +120,20 @@ export default defineUserConfig({
     },
   },
 
-
-
-  // use plugins
+  // use plugins - 简化配置，移除重复插件
   plugins: [
     iconPlugin({
       prefix: 'lucide:',
     }),
+    // 移除 markdownExtPlugin，因为它可能与 shiki 冲突
     markdownHintPlugin({
       hint: true,
-
       alert: true,
-    }),
-    markdownExtPlugin({
-      gfm: true
     }),
     redirectPlugin({
       config: {
         '/zh/caibot/CaiBotLite.html': '/zh/other/CaiBotLite.html',
-        '/' : `/zh/`,
+        '/': `/zh/`,
         '/zh/EconomicsAPI/': '/zh/guide/EconomicsAPI.html#进度限制'
       },
     }),
@@ -223,22 +192,16 @@ export default defineUserConfig({
       componentsDir: path.resolve(__dirname, './components'),
     }),
     copyCodePlugin({
-      "showInMobile": true
+      showInMobile: true
     }),
+    // 简化 shikiPlugin 配置
     shikiPlugin({
       themes: {
         light: 'one-light',
         dark: 'one-dark-pro',
       },
-      lineNumbers: 10,
-      notationDiff: true,
-      notationErrorLevel: true,
-      notationFocus: true,
-      notationHighlight: true,
-      notationWordHighlight: true,
-      whitespace: true,
-      collapsedLines: false,
-      twoslash: true,
+      // 只保留支持的选项
+      lineNumbers: true,
     }),
   ],
   alias: {
@@ -261,12 +224,8 @@ export default defineUserConfig({
   },
   extendsPage: (page: Page<Partial<DefaultThemePageData>>) => {
     const { icon } = page.frontmatter
-
-    // save icon into route meta
     if (icon) {
       page.routeMeta.icon = icon
     }
   },
-
 })
-

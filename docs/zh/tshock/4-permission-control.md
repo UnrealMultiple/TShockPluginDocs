@@ -93,6 +93,10 @@ TShock中权限管理以组为单位，一个组中有多个权限，在同一�
 
 ### 权限查询
 
+#### TShock权限： [TShock-Wiki镜像权限篇](../tshock-wiki/(中文)权限说明.html)
+
+#### 插件权限： [TShock-Wiki镜像权限篇](../guide/get-start.html)
+
 #### Omni
 
 1. 安装Omni (如果前面已经安装过了可以忽略)
@@ -107,12 +111,6 @@ TShock中权限管理以组为单位，一个组中有多个权限，在同一�
 
 > [!IMPORTANT]
 > 请谨慎其他权限的干扰。很多命令等包含多个权限检查，可能会干扰权限判断，例如上图的`tshock.su`。
-
-
-
-#### TShock权限： [TShock-Wiki镜像权限篇](../tshock-wiki/(中文)权限说明.html)
-
-#### 插件权限： [TShock-Wiki镜像权限篇](../guide/get-start.html)
 
 #### HelpPlus (仅命令权限)
 1. 安装HelpPlus (如果前面已经安装过了可以忽略)

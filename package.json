@@ -50,7 +50,7 @@
     "@vuepress/plugin-icon": "2.0.0-rc.112",
     "@vuepress/plugin-markdown-ext": "2.0.0-rc.105",
     "@vuepress/plugin-markdown-hint": "2.0.0-rc.105",
-    "@vuepress/plugin-redirect": "2.0.0-rc.105",
+    "@vuepress/plugin-redirect": "2.0.0-rc.112",
     "@vuepress/shiki-twoslash": "2.0.0-rc.76",
     "add": "^2.0.6",
     "axios": "^1.11.0",

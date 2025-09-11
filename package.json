@@ -46,6 +46,7 @@
     "@commitlint/config-conventional": "^19.6.0",
     "@vuepress/core": "^1.9.10",
     "@vuepress/helper": "2.0.0-rc.105",
+    "@vuepress/plugin-copy-code": "2.0.0-rc.112",
     "@vuepress/plugin-icon": "2.0.0-rc.112",
     "@vuepress/plugin-markdown-ext": "2.0.0-rc.105",
     "@vuepress/plugin-markdown-hint": "2.0.0-rc.105",
@@ -72,5 +73,12 @@
   "packageManager": "pnpm@10.6.3",
   "engines": {
     "node": ">=18.19.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "core-js",
+      "esbuild",
+      "highlight.js"
+    ]
   }
 }

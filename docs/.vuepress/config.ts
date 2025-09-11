@@ -14,6 +14,7 @@ import { redirectPlugin } from '@vuepress/plugin-redirect'
 import { iconPlugin } from '@vuepress/plugin-icon'
 import type { DefaultThemePageData } from '@vuepress/theme-default/lib/shared/page.js'
 import type { Page } from 'vuepress'
+import { copyCodePlugin } from '@vuepress/plugin-copy-code'
 
 import {
   head,
@@ -221,12 +222,15 @@ export default defineUserConfig({
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components'),
     }),
+    copyCodePlugin({
+      "showInMobile": true
+    }),
     shikiPlugin({
       themes: {
         light: 'one-light',
         dark: 'one-dark-pro',
       },
-      lineNumbers: true,
+      lineNumbers: 10,
       notationDiff: true,
       notationErrorLevel: true,
       notationFocus: true,
@@ -234,7 +238,8 @@ export default defineUserConfig({
       notationWordHighlight: true,
       whitespace: true,
       collapsedLines: false,
-    })
+      twoslash: true,
+    }),
   ],
   alias: {
     '@theme/VPAutoLink.vue': path.resolve(

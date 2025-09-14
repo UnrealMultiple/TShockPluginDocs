@@ -95,7 +95,7 @@ importers:
         version: 3.3.2
       pnpm:
         specifier: ^10.15.1
-        version: 10.15.1
+        version: 10.16.1
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
@@ -6213,8 +6213,8 @@ packages:
   pnpm-workspace-yaml@1.1.1:
     resolution: {integrity: sha512-nGBB7h3Ped3g9dBrR6d3YNwXCKYsEg8K9J3GMmSrwGEXq3RHeGW44/B4MZW51p4FRMnyxJzTY5feSBbUjRhIHQ==}
 
-  pnpm@10.15.1:
-    resolution: {integrity: sha512-NOU4wym1VTAUyo6PRTWZf5YYCh0PYUM5NXRJk1NQ2STiL4YUaCGRJk7DPRRirCFWGv+X9rsYBlNRwWLH6PbeZw==}
+  pnpm@10.16.1:
+    resolution: {integrity: sha512-DhVaomKduGcrSehHXaYiaqS96oX9zf3BU1CHSUbU88kfqvZMvcSl0auAAvRz1cP87c0ZeYnPA5D5ut08BGeHBg==}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -15782,7 +15782,7 @@ snapshots:
     dependencies:
       yaml: 2.8.1
 
-  pnpm@10.15.1: {}
+  pnpm@10.16.1: {}
 
   portfinder@1.0.37(supports-color@6.1.0):
     dependencies:

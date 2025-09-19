@@ -110,7 +110,7 @@ importers:
         version: 3.4.0
       taze:
         specifier: ^19.6.0
-        version: 19.6.0
+        version: 19.7.0
       tsconfig-vuepress:
         specifier: ^7.0.0
         version: 7.0.0
@@ -202,8 +202,9 @@ packages:
     resolution: {integrity: sha512-npZ9aeag4SGTx677eqPL3rkSPlQrnzx/8wNrl1P7GpWq9w/eTmRbOq+wKrJ2r78idlY0MMgmY/mld2tq6dc44g==}
     engines: {node: '>= 14.0.0'}
 
-  '@antfu/ni@25.0.0':
-    resolution: {integrity: sha512-9q/yCljni37pkMr4sPrI3G4jqdIk074+iukc5aFJl7kmDCCsiJrbZ6zKxnES1Gwg+i9RcDZwvktl23puGslmvA==}
+  '@antfu/ni@26.0.1':
+    resolution: {integrity: sha512-yGtjrmEVziDXW/7ggkzDtJkiJ8e8a9j+CtYBhT6gnvVoIXHtTc+iL+ZDMfUDe1wxRvYJrLpmHLJb5HjA5Hskyg==}
+    engines: {node: '>=20'}
     hasBin: true
 
   '@babel/code-frame@7.27.1':
@@ -7553,8 +7554,8 @@ packages:
     resolution: {integrity: sha512-ZL6DDuAlRlLGghwcfmSn9sK3Hr6ArtyudlSAiCqQ6IfE+b+HHbydbYDIG15IfS5do+7XQQBdBiubF/cV2dnDzg==}
     engines: {node: '>=6'}
 
-  taze@19.6.0:
-    resolution: {integrity: sha512-hQGQH4WVtV9BqsZbrGzOmOP4NdWqie948BnqtH+NPwdVt5mI+qALVRDvgzgdf+neN7bcrVVpV4ToyFkxg0U0xQ==}
+  taze@19.7.0:
+    resolution: {integrity: sha512-+iQhlg/O0XLTYvJFpyTq8MiXBlZx6IWPOUeMHm/abE971LW4REA7IgQSCqyi9Cd9WPziL0J8IiHQhpJd5Z0PpA==}
     hasBin: true
 
   terser-webpack-plugin@1.4.6:
@@ -8479,12 +8480,13 @@ snapshots:
     dependencies:
       '@algolia/client-common': 5.37.0
 
-  '@antfu/ni@25.0.0':
+  '@antfu/ni@26.0.1':
     dependencies:
       ansis: 4.1.0
       fzf: 0.5.2
       package-manager-detector: 1.3.0
       tinyexec: 1.0.1
+      tinyglobby: 0.2.15
 
   '@babel/code-frame@7.27.1':
     dependencies:
@@ -10763,7 +10765,7 @@ snapshots:
       copy-webpack-plugin: 5.1.2(webpack@4.47.0)
       core-js: 3.45.1
       cross-spawn: 6.0.6
-      css-loader: 2.1.1(webpack@4.47.0)
+      css-loader: 2.1.1(webpack@5.101.3(esbuild@0.14.7))
       esbuild: 0.14.7
       file-loader: 3.0.1(webpack@4.47.0)
       js-yaml: 3.14.1
@@ -10776,7 +10778,7 @@ snapshots:
       toml: 3.0.0
       url-loader: 1.1.2(webpack@4.47.0)
       vue: 2.7.16
-      vue-loader: 15.11.1(@vue/compiler-sfc@3.5.21)(cache-loader@3.0.1(webpack@4.47.0))(css-loader@2.1.1(webpack@5.101.3(esbuild@0.14.7)))(lodash@4.17.21)(prettier@3.6.2)(vue-template-compiler@2.7.16)(webpack@4.47.0)
+      vue-loader: 15.11.1(@vue/compiler-sfc@3.5.21)(cache-loader@3.0.1(webpack@4.47.0))(css-loader@2.1.1(webpack@4.47.0))(lodash@4.17.21)(prettier@3.6.2)(vue-template-compiler@2.7.16)(webpack@4.47.0)
       vue-router: 3.6.5(vue@2.7.16)
       vue-server-renderer: 2.7.16
       vue-template-compiler: 2.7.16
@@ -12480,7 +12482,7 @@ snapshots:
     dependencies:
       postcss: 8.5.6
 
-  css-loader@2.1.1(webpack@4.47.0):
+  css-loader@2.1.1(webpack@5.101.3(esbuild@0.14.7)):
     dependencies:
       camelcase: 5.3.1
       icss-utils: 4.1.1
@@ -12493,7 +12495,7 @@ snapshots:
       postcss-modules-values: 2.0.0
       postcss-value-parser: 3.3.1
       schema-utils: 1.0.0
-      webpack: 4.47.0
+      webpack: 5.101.3(esbuild@0.14.7)
 
   css-loader@7.1.2(webpack@5.101.3(esbuild@0.14.7)):
     dependencies:
@@ -17254,9 +17256,9 @@ snapshots:
 
   tapable@2.2.3: {}
 
-  taze@19.6.0:
+  taze@19.7.0:
     dependencies:
-      '@antfu/ni': 25.0.0
+      '@antfu/ni': 26.0.1
       cac: 6.7.14
       find-up-simple: 1.0.1
       ofetch: 1.4.1
@@ -17267,7 +17269,6 @@ snapshots:
       tinyexec: 1.0.1
       tinyglobby: 0.2.15
       unconfig: 7.3.3
-      yaml: 2.8.1
 
   terser-webpack-plugin@1.4.6(webpack@4.47.0):
     dependencies:
@@ -17725,10 +17726,10 @@ snapshots:
 
   vue-hot-reload-api@2.3.4: {}
 
-  vue-loader@15.11.1(@vue/compiler-sfc@3.5.21)(cache-loader@3.0.1(webpack@4.47.0))(css-loader@2.1.1(webpack@5.101.3(esbuild@0.14.7)))(lodash@4.17.21)(prettier@3.6.2)(vue-template-compiler@2.7.16)(webpack@4.47.0):
+  vue-loader@15.11.1(@vue/compiler-sfc@3.5.21)(cache-loader@3.0.1(webpack@4.47.0))(css-loader@2.1.1(webpack@4.47.0))(lodash@4.17.21)(prettier@3.6.2)(vue-template-compiler@2.7.16)(webpack@4.47.0):
     dependencies:
       '@vue/component-compiler-utils': 3.3.0(lodash@4.17.21)
-      css-loader: 2.1.1(webpack@4.47.0)
+      css-loader: 2.1.1(webpack@5.101.3(esbuild@0.14.7))
       hash-sum: 1.0.2
       loader-utils: 1.4.2
       vue-hot-reload-api: 2.3.4

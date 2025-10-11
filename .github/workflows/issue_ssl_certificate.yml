@@ -14,36 +14,43 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        domain: 
-          - 'terraria.ink'
-          - '*.terraria.ink'
-        include:
-          - domain: 'terraria.ink'
+        config: 
+          - domain: '*.terraria.ink'
             cert_name: 'TShockPluginsDocs'
             cdn_domains: 'docs.terraria.ink'
-          - domain: '*.terraria.ink'
+            
+          - domain: '*.terraria.ink' 
             cert_name: 'CaiBotApi'
             cdn_domains: 'raw.terraria.ink'
+            
           - domain: '*.terraria.ink'
             cert_name: 'CaiBlog'
             cdn_domains: 'blog.terraria.ink'
     
     steps:
-      - uses: Menci/acme@v2
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create output directory
+        run: mkdir -p output
+
+      - name: Issue SSL Certificate
+        uses: Menci/acme@v2
         with:
           version: 3.0.2
-          domains: ${{ matrix.domain }}
+          domains: ${{ matrix.config.domain }}
           arguments: --server letsencrypt --dns dns_ali
           output-fullchain: output/fullchain.pem
           output-key: output/key.pem
    
-      - uses: Menci/deploy-certificate-to-aliyun@beta-v1
+      - name: Deploy to Aliyun CDN
+        uses: Menci/deploy-certificate-to-aliyun@beta-v1
         with:
           access-key-id: ${{ secrets.ALI_KEY }}
           access-key-secret: ${{ secrets.ALI_SECRET }}
           fullchain-file: output/fullchain.pem
           key-file: output/key.pem
-          certificate-name: ${{ matrix.cert_name }}
-          cdn-domains: ${{ matrix.cdn_domains }}
+          certificate-name: ${{ matrix.config.cert_name }}
+          cdn-domains: ${{ matrix.config.cdn_domains }}
           timeout: 10000
           retry: 3

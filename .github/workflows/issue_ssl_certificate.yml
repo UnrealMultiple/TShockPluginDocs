@@ -15,17 +15,13 @@ jobs:
     strategy:
       matrix:
         config: 
-          - domain: '*.terraria.ink'
+          - domains: 'docs.terraria.ink'
             cert_name: 'TShockPluginsDocs'
-            cdn_domains: 'docs.terraria.ink'
             
-          - domain: '*.terraria.ink' 
+          - domains: 'raw.terraria.ink'
             cert_name: 'CaiBotApi'
-            cdn_domains: 'raw.terraria.ink'
             
-          - domain: '*.terraria.ink'
-            cert_name: 'CaiBlog'
-            cdn_domains: 'blog.terraria.ink'
+          - domains: 'blog.terraria.ink'
     
     steps:
       - name: Checkout
@@ -38,7 +34,7 @@ jobs:
         uses: Menci/acme@v2
         with:
           version: 3.0.2
-          domains: ${{ matrix.config.domain }}
+          domains: ${{ matrix.config.domains }}
           arguments: --server letsencrypt --dns dns_ali
           output-fullchain: output/fullchain.pem
           output-key: output/key.pem
@@ -51,6 +47,6 @@ jobs:
           fullchain-file: output/fullchain.pem
           key-file: output/key.pem
           certificate-name: ${{ matrix.config.cert_name }}
-          cdn-domains: ${{ matrix.config.cdn_domains }}
+          cdn-domains: ${{ matrix.config.domains }}
           timeout: 10000
           retry: 3

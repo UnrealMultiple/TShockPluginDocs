@@ -1,4 +1,4 @@
-name: Issue SSL certificate
+name: Issue Wildcard SSL Certificates
 on:
   schedule:
     - cron: '0 0 */3 * *'
@@ -9,79 +9,42 @@ env:
   Ali_Secret: ${{ secrets.ALI_SECRET }}
 
 jobs:
-  issue-docs-ssl-certificate:
-    name: Issue Docs SSL certificate
+  issue-wildcard-certs:
+    name: Issue Wildcard SSL Certificates
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        domain: 
+          - 'terraria.ink'
+          - '*.terraria.ink'
+        include:
+          - domain: 'terraria.ink'
+            cert_name: 'TShockPluginsDocs'
+            cdn_domains: 'docs.terraria.ink'
+          - domain: '*.terraria.ink'
+            cert_name: 'CaiBotApi'
+            cdn_domains: 'raw.terraria.ink'
+          - domain: '*.terraria.ink'
+            cert_name: 'CaiBlog'
+            cdn_domains: 'blog.terraria.ink'
+    
     steps:
       - uses: Menci/acme@v2
         with:
           version: 3.0.2
-          domains: docs.terraria.ink
+          domains: ${{ matrix.domain }}
           append-wildcard: false
-
           arguments: --server letsencrypt --dns dns_ali
-          arguments-file: ''
-
-          output-cert: output/cert.pem
           output-fullchain: output/fullchain.pem
           output-key: output/key.pem
    
       - uses: Menci/deploy-certificate-to-aliyun@beta-v1
         with:
-    
           access-key-id: ${{ secrets.ALI_KEY }}
           access-key-secret: ${{ secrets.ALI_SECRET }}
-          
           fullchain-file: output/fullchain.pem
           key-file: output/key.pem
-
-          certificate-name: TShockPluginsDocs
-
-          # (Optional) Deploy to CDN
-          cdn-domains: |
-            docs.terraria.ink
-        
-          # (Optional) API request timeout (unit ms)
+          certificate-name: ${{ matrix.cert_name }}
+          cdn-domains: ${{ matrix.cdn_domains }}
           timeout: 10000
-
-          # (Optional) API request attempt times
           retry: 3
-          
-  issue-ssl-certificate:
-    name: Issue CaiBotRaw SSL certificate
-    runs-on: ubuntu-latest
-    steps:
-      - uses: Menci/acme@v2
-        with:
-          version: 3.0.2
-          domains: raw.terraria.ink
-          append-wildcard: false
-  
-          arguments: --server letsencrypt --dns dns_ali
-          arguments-file: ''
-  
-          output-cert: output/cert.pem
-          output-fullchain: output/fullchain.pem
-          output-key: output/key.pem
-   
-      - uses: Menci/deploy-certificate-to-aliyun@beta-v1
-        with:
-    
-          access-key-id: ${{ secrets.ALI_KEY }}
-          access-key-secret: ${{ secrets.ALI_SECRET }}
-          
-          fullchain-file: output/fullchain.pem
-          key-file: output/key.pem
-  
-          certificate-name: CaiBotApi
-  
-          # (Optional) Deploy to CDN
-          cdn-domains: |
-            raw.terraria.ink
-        
-          # (Optional) API request timeout (unit ms)
-          timeout: 10000
-  
-          # (Optional) API request attempt times
-          retry: 3
-  

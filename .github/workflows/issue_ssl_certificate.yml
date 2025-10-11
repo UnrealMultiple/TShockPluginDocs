@@ -1,4 +1,4 @@
-name: Issue Wildcard SSL Certificates
+name: Issue SSL Certificates
 on:
   schedule:
     - cron: '0 0 */3 * *'
@@ -10,7 +10,7 @@ env:
 
 jobs:
   issue-wildcard-certs:
-    name: Issue Wildcard SSL Certificates
+    name: Issue SSL Certificates
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -33,7 +33,6 @@ jobs:
         with:
           version: 3.0.2
           domains: ${{ matrix.domain }}
-          append-wildcard: false
           arguments: --server letsencrypt --dns dns_ali
           output-fullchain: output/fullchain.pem
           output-key: output/key.pem

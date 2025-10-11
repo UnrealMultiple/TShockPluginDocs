@@ -22,6 +22,7 @@ jobs:
             cert_name: 'CaiBotApi'
             
           - domains: 'blog.terraria.ink'
+            cert_name: 'CaiBlog'
     
     steps:
       - name: Checkout

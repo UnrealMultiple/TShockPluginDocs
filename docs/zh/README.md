@@ -3,11 +3,6 @@ home: true
 icon: home
 title: 首页
 actions:
-  - text: 插件文档
-    icon: unplug
-    link: /zh/guide/get-start.md
-    type: primary
-  
   - text: TShock教程
     icon: book-check
     link: /zh/tshock/get-start.md
@@ -16,6 +11,11 @@ actions:
   - text: TShock Wiki 镜像
     icon: book-open
     link: /zh/tshock-wiki/get-start.md
+    type: primary
+    
+  - text: 插件文档
+    icon: unplug
+    link: /zh/guide/get-start.md
     type: primary
 
   - text: 其他文档

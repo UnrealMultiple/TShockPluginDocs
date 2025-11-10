@@ -1,4 +1,6 @@
 # TShock入门教程 (By Cai)
+> [!NOTE]
+> 此教程尚未完善，未提及内容可查看[老教程](https://tr.monika.love/docs/tshock-tutorial-1/)
 
 ## 为什么使用TShock？
 TShock是一款泰拉瑞亚服务器软件，可为服务器添加大量的工具，包括：

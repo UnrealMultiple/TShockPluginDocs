@@ -42,7 +42,7 @@
     "sass-loader": "^16.0.5"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
+    "@commitlint/cli": "^20.0.0",
     "@commitlint/config-conventional": "^19.8.1",
     "@vuepress/core": "^1.9.10",
     "@vuepress/helper": "2.0.0-rc.105",

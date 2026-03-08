@@ -53,6 +53,14 @@ Linux下服务器地图会被储存在目录`.local/share/Terraria/Worlds/`中�
 
 没有这方面的需求呢~
 
+### 指定地图目录
+如果想TShock读取指定目录为地图目录，可在启动脚本中使用`-worldselectpath`
+   ```bash
+   ./TShock.Server -lang 7 -worldselectpath ./worlds
+   ```
+会在当前目录下生成一个名为`worlds`的文件夹，TShock将仅读取其中的地图文件
+![PixPin_2025-11-11_11-32-39](https://github.com/user-attachments/assets/3b46c1d6-ae2d-4e45-90b0-e752804231a4)
+
 ## 配置服务器
 
 #### Windows & Linux

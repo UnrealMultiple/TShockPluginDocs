@@ -65,10 +65,6 @@ export default defineUserConfig({
     editLink: false,
     // theme-level locales config
     locales: {
-      '/en/': {
-        navbar: navbarEn,
-        sidebar: sidebarEn,
-      },
       '/zh/': {
         navbar: navbarZh,
         selectLanguageName: '简体中文',

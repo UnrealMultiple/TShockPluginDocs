@@ -41,6 +41,8 @@
 
 > 点击`链接`可查看`插件文档`
 
+<Details>
+<Summary>插件列表</Summary>
 
 | 名称 | 插件说明 | 依赖 |
 | :-: | :-: | :-: |
@@ -185,6 +187,8 @@
 | [WeaponPlus](./WeaponPlus.md) | 武器强化钱币版 |  |
 | [WikiLangPackLoader](./WikiLangPackLoader.md) | 为服务器加载 Wiki 语言包 |  |
 | [WorldModify](WorldModify.md) | 世界编辑器,可以修改大部分的世界参数 |  |
+
+</Details>
 
 
 ## 友情链接

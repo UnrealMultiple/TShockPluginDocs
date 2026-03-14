@@ -1,28 +1,7 @@
-:root {
-  --code-c-bg: #fafafa;
-  --code-tabs-c-text: var(--vp-c-text);
-  --code-tabs-c-bg: rgba(0 0 0 / 10%);
+.vp-navbar-items-wrapper .nav-item.select-language {
+  display: none !important;
 }
 
-[data-theme='dark'] {
-  --code-c-bg: #282c34;
-  --code-tabs-c-bg: #181819;
-}
-
-.code-block-title-bar[data-title^='.vuepress/config.ts'] {
-  display: flex;
-  align-items: center;
-
-  &::before {
-    content: ' ';
-
-    display: inline-block;
-
-    width: 1.5em;
-    height: 1.5em;
-    margin-inline-end: 0.5em;
-
-    background: url('https://ecosystem.vuejs.press/images/hero.png') no-repeat
-      center / contain;
-  }
+.vp-navbar-items-wrapper nav>div:nth-child(4) {
+  display: none !important;
 }

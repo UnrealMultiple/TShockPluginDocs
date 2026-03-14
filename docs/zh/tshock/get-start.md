@@ -1,5 +1,5 @@
 # TShock入门教程 (By Cai)
->
+
 > [!NOTE]
 > 此教程尚未完善，未提及内容可查看[老教程](https://tr.monika.love/docs/tshock-tutorial-1/)
 

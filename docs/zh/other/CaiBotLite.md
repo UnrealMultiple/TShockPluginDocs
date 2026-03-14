@@ -24,7 +24,7 @@
 
 4. 下载适配插件/MOD
    - TShock插件:
-       - [[TShock 6]](https://api.terraria.ink:22338/plugin/[TS5]CaiBotLite.zip)
+       - 请使用APM下载，APM在插件文档主页有详细介绍
    - TMOD:
        - [[Steam创意工坊]](https://steamcommunity.com/sharedfiles/filedetails/?id=3628244583)
 

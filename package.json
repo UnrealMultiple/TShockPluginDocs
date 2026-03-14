@@ -45,7 +45,7 @@
     "@commitlint/cli": "^20.4.4",
     "@commitlint/config-conventional": "^20.4.4",
     "@vuepress/core": "^1.9.10",
-    "@vuepress/helper": "2.0.0-rc.105",
+    "@vuepress/helper": "2.0.0-rc.125",
     "@vuepress/plugin-copy-code": "2.0.0-rc.112",
     "@vuepress/plugin-icon": "2.0.0-rc.112",
     "@vuepress/plugin-markdown-ext": "2.0.0-rc.105",

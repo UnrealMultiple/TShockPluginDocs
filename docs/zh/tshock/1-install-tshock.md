@@ -1,5 +1,8 @@
 # 1. 安装TShock
 
+> [!IMPORTANT]
+> TShock目前已更新到TShock 6，教程中截图使用的是TShock5，请注意区别
+
 ## 基本知识
 
 ### 网络环境
@@ -35,12 +38,7 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
 ## 开始安装TShock
 
 1. 我们进入TShock的发布页(可能需要科学上网): <https://github.com/Pryaxis/TShock/releases>  
-目前TShock主要两个版本TShock6和TShock5两个版本。
-
-| 版本    | 优点                            | 缺点                              |
-| ------- | ------------------------------- | --------------------------------- |
-| TShock5 | 稳定，使用人多                  | 不支持新插件，未来迁移TShock6方便 |
-| TShock6 | 支持新插件，未来无缝迁移TShock6 | 有一些奇怪Bug                     |
+目前TShock主要最新版本为TShock 6，正常情况下请下载Latest版本 (最新稳定版)
 
 1. 选择对应的版本下载
 ![20250801150533](https://raw.githubusercontent.com/ACaiCat/cai-image/main/20250801150533.png)
@@ -86,9 +84,8 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
   ![PixPin_2025-08-01_16-43-54](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-01_16-43-54.gif)
 
 1. 安装TShock运行环境
-  TShock5需要下载.NET 6运行时，TShock6需要下载.NET 9运行时  
+  TShock 6需要下载.NET 9运行时
 
-- [TShock 5 .NET6](https://dotnet.microsoft.com/zh-cn/download/dotnet/6.0)
 - [TShock 6 .NET9](https://dotnet.microsoft.com/zh-cn/download/dotnet/9.0)
   
   ![PixPin_2025-08-01_16-48-54](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-01_16-48-54.gif)
@@ -99,7 +96,10 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
 1. 把安装程序上传到服务器并安装，一路下一步 (当然如果你直接在服务器下载就可以直接运行安装程序了)
 2. 检查文件扩展名打开，创建启动脚本，启动TShock
 
-   ```
+    > [!NOTE]
+    > TShock 6支持自动识别语言，只要你系统语言是中文就会自动启用中文翻译，但是仍然建议脚本启动
+
+   ```shell
    TShock.Server.exe -lang 7
    pause
    ```
@@ -126,9 +126,9 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
 
    ```shell
    apt install unzip
-   unzip TShock-5.2.4-for-Terraria-1.4.4.9-linux-amd64-Release.zip
+   unzip TShock-6.1.0-for-Terraria-1.4.5.6-linux-amd64-Release.zip
    tar -xvf TShock-Beta-linux-x64-Release.tar --one-top-level=tshock
-   rm TShock-5.2.4-for-Terraria-1.4.4.9-linux-amd64-Release.zip TShock-Beta-linux-x64-Release.tar
+   rm TShock-6.1.0-for-Terraria-1.4.5.6-linux-amd64-Release.zip TShock-Beta-linux-x64-Release.tar
    cd tshock
    ```
 
@@ -143,11 +143,6 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
     ```
 
    1. 使用脚本安装.NET运行时 (有点慢，卡太久就上科学或者手动安装吧)
-     - TShock 5 .NET6：
-
-      ```shell
-      ./dotnet-install.sh --runtime dotnet --channel 6.0
-      ```
 
      - TShock 6 .NET9：
 
@@ -172,6 +167,10 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
    ![PixPin_2025-08-01_18-23-24](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-01_18-23-24.gif)
 
 4. 创建启动脚本 (你喜欢Vim我也没意见)
+
+    > [!NOTE]
+    > TShock 6支持自动识别语言，只要你系统语言是中文就会自动启用中文翻译，但是仍然建议脚本启动
+
    1. 安装nano并且创建启动脚本
 
    ```shell
@@ -245,9 +244,6 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
    > [!NOTE]
    > 目前TShock 6还未发布官方镜像，可以使用羽学提供的第三方镜像替代
 
-   - TShock 5：
-    ![PixPin_2025-08-02_11-34-06](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-02_11-34-06.gif)
-
    - TShock 6：
     ![PixPin_2025-08-02_11-35-12](https://raw.githubusercontent.com/ACaiCat/cai-image/main/PixPin_2025-08-02_11-35-12.gif)
 
@@ -264,8 +260,6 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
    > [!NOTE]
    > 目前TShock 6还未发布官方镜像，可以跟随教程手动部署环境
 
-- TShock 5：
-    ![PixPin_2025-08-04_23-03-11](https://github.com/user-attachments/assets/0ecf35d8-18e6-4fdc-8bfe-5e146e5fe371)
 - TShock 6：
     ![PixPin_2025-08-04_23-14-33](https://github.com/user-attachments/assets/50e06227-f0ae-4120-9c40-e07a9afcfcd5)
   - 进入控制台后，点击`进入控制台`，点击`文件管理`,通过`启动脚本(可修改).sh`来进行环境部署
@@ -286,17 +280,7 @@ TShock对服务器的性能要求并不高，注意以下几点即可:
 
     ![PixPin_2025-08-05_00-31-03](https://github.com/user-attachments/assets/354ba3e5-b73e-43b8-9b67-3a1dab5033bd)
 
-3. 修改`启动脚本(可修改).sh`内语句，启动TShock
-
-- TShock 5：可在分号处适当添加回车键，方便后续修改启动参数，可适当删除启动参数以同步教程教学，仅留`-ip`和`-lang`至如下效果
-- 注意将`dotnet-runtime-6.0.2-linux-x64.tar.gz`修改为你文件目录该.NET运行时压缩包名字
-
-    ```shell
-      mkdir -p /usr/dotnet && tar zxf dotnet-runtime-6.0.2-linux-x64.tar.gz -C /usr/dotnet;
-      export DOTNET_ROOT=/usr/dotnet;
-      export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/dotnet;
-      ./TShock.Server -ip 0.0.0.0 -lang 7
-    ```
+1. 修改`启动脚本(可修改).sh`内语句，启动TShock
 
 - TShock 6：根据刚刚下载的.NET运行时压缩包名字，适当更改如下内容
 

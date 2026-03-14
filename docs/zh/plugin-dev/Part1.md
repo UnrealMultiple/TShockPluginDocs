@@ -11,12 +11,16 @@
 1. 打开一个`PowerShell`  
 ![image](https://github.com/user-attachments/assets/661cb09b-1095-42d9-b6b1-3318f7d3a9a9)
 2. 复制并且运行以下命令
+
 ```
 dotnet new install TShock.Plugin.ProjectTemplates  
 ```
+
 看到如下提示即安装成功  
 ![image](https://github.com/user-attachments/assets/afa2727e-e754-4443-8e94-d55ea86c7cd8)
+
 ## 2.新建TShock插件项目
+
 1. 回到Rider，点击`新建解决方案`
 ![image](https://github.com/user-attachments/assets/026d0090-d774-4cbf-90ca-f823ae29cdf7)
 2. 按照下图填写，然后点击`创建`
@@ -24,18 +28,18 @@ dotnet new install TShock.Plugin.ProjectTemplates
 
 > [!NOTE]
 > 一般来讲，项目名只由字母(A-Z,a-z)，数字(0-9)，下划线(_)组成，并且项目名具有实际意义  
-> 
+>
 > 不要使用中文！不要使用中文！不要使用中文！(引自棱镜)​
 
 > [!TIP]
 > 解决方案中可以包含多个插件项目。使用同一个解决方案存放多个插件项目可以方便管理多个插件代码，并且方便项目之间互相引用。
-> 
+>
 > 注: 如果提示没有按照目标框架，点击提示安装即可。
-
 
 ## 2.进入项目项目​
 
 ### 资源管理器(右上角)
+
 它是一个非常重要的工具窗口,它可以用来管理、操作你的项目中的各个文件。其中Plugin.cs就是你插件的源码文件，我们双击就可以打开它。
 ![image](https://github.com/user-attachments/assets/b009c220-28ef-47a5-aa23-998c05fa3249)
 
@@ -48,9 +52,10 @@ dotnet new install TShock.Plugin.ProjectTemplates
 > 当然同样要遵循命名规范，不随意使用中文
 > ![image](https://github.com/user-attachments/assets/00dbda0b-0def-4a3f-b28a-239fa34c4d74)
 
-
 ## 3.开始编写代码​
+
 这里有个简单的TShock插件示例，你可以复制替换到Plugin.cs
+
 ```csharp
 using System.Reflection;
 using Terraria;
@@ -117,8 +122,6 @@ public class Plugin : TerrariaPlugin
 > 如果有错误存在，可能是你复制漏了某些地方
 > 也可能是你的环境有问题
 
-
-
 ## 5.构建你的插件​
 
 点击工具栏处(右上角)的`锤子`即可开始构建
@@ -126,28 +129,27 @@ public class Plugin : TerrariaPlugin
 
 ## 6.找到并安装你的插件​
 
-1. 在资源管理器右键`当前项目(Myfirstplugin)`,选择`打开于-资源管理器` 
+1. 在资源管理器右键`当前项目(Myfirstplugin)`,选择`打开于-资源管理器`
 ![image](https://github.com/user-attachments/assets/910e1136-e93e-4767-84b8-fdd95980b392)
 
-  
 2. 此时会弹出你的项目文件夹，顺着`bin/Debug/net6.0`就能找到你的插件啦~
 
 ![image](https://github.com/user-attachments/assets/97830e0c-d7dd-4950-914d-a172630a9887)
-
 
 > [!NOTE]
 > 文件的作用:  
 > .dll: 插件的本体  
 > .pdb: 调试文件, 放在`ServerPlugins`文件夹和插件一起加载, 报错时会显示报错方法对应源代码的具体位置  
 
-3. 然后把插件的`.dll`文件和`.pdb`文件复制到TShock的`ServerPlugins`文件夹就可以开始调试啦~
+1. 然后把插件的`.dll`文件和`.pdb`文件复制到TShock的`ServerPlugins`文件夹就可以开始调试啦~
+
 > [!TIP]
 > 可以像Cai把`TShockPlugins`文件夹固定在快速访问，这样就可以很快的把插件替换上去啦~
 > ![image](https://github.com/user-attachments/assets/d8d8cf34-cab3-4a4a-9ba5-3f410123caf6)
 
-
-3. 为什么要安装PDB (看不懂可以先忽略)  
+1. 为什么要安装PDB (看不懂可以先忽略)  
 我们下面有段代码,会在插件加载时报错  
+
 ```csharp
 29   public void KoKoLoveYou()
 30   {
@@ -169,6 +171,7 @@ public class Plugin : TerrariaPlugin
 45      }
 46  }
 ```
+
 - 如果你没有安装PDB那么你看到的报错是这样的
   ![image](https://github.com/user-attachments/assets/3e8d6d00-46d9-4cd3-84fd-267691a9b8cb)
 
@@ -185,27 +188,31 @@ public class Plugin : TerrariaPlugin
 2. 使用/help命令查看命令列表，可以发现插件添加的命令已经在命令列表中显示 (这里装了`Help Plus`)
    ![image](https://github.com/user-attachments/assets/8907fd09-205e-4b46-a75d-27efc10899ac)
 
-4. 执行`/helloworld`(或者`/hw`)，控制台打印出绿色`Hello world!`说明插件功能正常  
+3. 执行`/helloworld`(或者`/hw`)，控制台打印出绿色`Hello world!`说明插件功能正常  
    ![image](https://github.com/user-attachments/assets/c00c9fe1-8874-4f0b-b1ca-263aed108fc5)
 
 ## 8.使用`VBY.PluginLoader`热重载插件 (by @xuyuwtu)
+
 当我们修改代码后，我们需要把新构建的插件丢进`ServerPlugins`里，同时还需要重启TShock来重新加载我们的插件，TShock重启的速度很慢，这样很浪费时间，所以我们就可以使用`VBY.PluginLoader`热重载插件
+
 | 命令 | 作用 |
 | :-: | :-: |
 | /load load | 加载所有PluginLoader所管理的插件 |
 | /load unload | 卸载PluginLoader所管理的插件 |
 | /load reload| 重载PluginLoader所管理的插件 |
 | /load plugins| 显示PluginLoader已加载的插件 |
+
 1. 使用前你必须删除`ServerPlugins`中你需要热重载的插件  
    ![image](https://github.com/user-attachments/assets/b2e73076-150d-41f2-a014-f5a0eaf30094)  
 2. 安装`VBY.PluginLoader`，你可以在[TShock中文插件库](https://github.com/UnrealMultiple/TShockPlugin)找到这个插件  
    ![image](https://github.com/user-attachments/assets/3e6770b2-ed53-44b5-9a19-cacbcf1dff9b)  
 3. 安装并加载后你的`TShock`根目录下会多出一个`PluginLoader`文件夹, 我们把插件丢进去  
    ![image](https://github.com/user-attachments/assets/9c7cc86c-dd9b-4f32-8e2f-62056fd6416b)  
-   ![image](https://github.com/user-attachments/assets/36b7e577-3e83-4a43-a728-ce3fcd766501)   
+   ![image](https://github.com/user-attachments/assets/36b7e577-3e83-4a43-a728-ce3fcd766501)
 4. 此时使用命令`/hw`,发现插件已经被`VBY.PluginLoader`加载。如果弹出两个, 说明你没有删除原插件文件夹的插件  
    ![image](https://github.com/user-attachments/assets/53127f9b-a009-4f0f-95ec-51411674dbdf)  
 5. 我们这时候修改一下我们的代码，然后重新构建  
+
     ```csharp
     //执行指令时对指令进行处理的方法
     private void HelloWorldCommand(CommandArgs args)
@@ -214,6 +221,7 @@ public class Plugin : TerrariaPlugin
         args.Player.SendSuccessMessage($"Hello {args.Player.Name}!");
     }
     ```
+
 6. 把文件替换到`PluginLoader`文件夹  
    ![image](https://github.com/user-attachments/assets/c4898124-a116-44f8-9cc0-26f7563e112c)  
 7. 执行命令`/load reload`  
@@ -223,8 +231,3 @@ public class Plugin : TerrariaPlugin
 
 > [!NOTE]
 > 控制台也算是玩家`(TSPlayer.Server)`，它的名字是`Server`
-   
-
-
-  
-

@@ -1,8 +1,8 @@
 # PatchouliBot 使用指南
 
-> **插件加载器** 下载地址：https://wwbo.lanzouo.com/b011lahjta（密码:csft）
+> **插件加载器** 下载地址：<https://wwbo.lanzouo.com/b011lahjta（密码:csft）>
 >
-> **模组订阅地址** ：https://steamcommunity.com/sharedfiles/filedetails/?id=3499721024
+> **模组订阅地址** ：<https://steamcommunity.com/sharedfiles/filedetails/?id=3499721024>
 > [[添加帕秋莉Bot到群中]](https://qun.qq.com/qunpro/robot/qunshare?robot_appid=102149794&robot_uin=3889060871)
 
 ## 📄服务器功能使用帮助
@@ -49,7 +49,7 @@ _**TModLoader服务器版本:**_
 - **表情列表** 查看可绘制的表情指令列表
 - **搜表情** 搜索可绘制表情信息
 
-## 📄泰拉服务器管理指令：
+## 📄泰拉服务器管理指令
 
 - **开启/关闭** 开启或关闭泰拉服务器功能（需要最高权限）
 - **群聊名称 名称** 设置群聊名称（需要最高权限）
@@ -83,7 +83,7 @@ _**TModLoader服务器版本:**_
 
 > 注意：新版本的共享服务器无法共享白名单，共享分群的玩家无法进入服务器，父群功能白名单通用
 
-## 📄泰拉瑞亚服务器玩家功能帮助：
+## 📄泰拉瑞亚服务器玩家功能帮助
 
 - **绑定 名称** 绑定一个游戏名称
 - **修改白名单 名称** 修改绑定名称
@@ -102,7 +102,7 @@ _**TModLoader服务器版本:**_
 - **发送 序号 内容** 在服务器发送消息
 - **服务器消息 序号** 获取服务器内的消息
 
-## 📄泰拉瑞亚查询指令：
+## 📄泰拉瑞亚查询指令
 
 - **wiki 内容** 在泰拉瑞亚wiki中搜索相关内容并返回图像结果
 - **si 内容** 搜索泰拉瑞亚的物品信息
@@ -111,7 +111,7 @@ _**TModLoader服务器版本:**_
 - **sb 内容** 搜索泰拉瑞亚的增益信息
 - **sbpr 内容** 搜索泰拉瑞亚的前缀信息
 
-*其他内容待更新请见原教程地址*
+_其他内容待更新请见原教程地址_
 
-使用教程原地址：https://bbs.windfrost.cn/d/50
-更新日志：https://bbs.windfrost.cn/d/51
+使用教程原地址：<https://bbs.windfrost.cn/d/50>
+更新日志：<https://bbs.windfrost.cn/d/51>

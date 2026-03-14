@@ -7,7 +7,7 @@
 
 ## 什么是数据包？​
 
- - 顾名思义，数据包就是存放数据的包。这些包会告诉玩家的客户端一些游戏内的信息\(例如物品掉落、地图时间等\)，当然服务器也可以接受来自玩家的数据包​
+- 顾名思义，数据包就是存放数据的包。这些包会告诉玩家的客户端一些游戏内的信息\(例如物品掉落、地图时间等\)，当然服务器也可以接受来自玩家的数据包​
 
 ## 为什么要发送数据包？​
 
@@ -16,15 +16,18 @@
 ## 如何发送数据包？​
 
 - 我们可以调用TSPlayer对象中的SendData方法来发送数据包  
-1.  首先我们需要获取对应的TSPlayer对象，前面教程已经有了，就不在过多赘述  
+
+1. 首先我们需要获取对应的TSPlayer对象，前面教程已经有了，就不在过多赘述  
     > 注: 如果你需要发送全服数据包玩家对象就是TSPlayer.All
 
- 2. 然后使用SendData方法  
+2. 然后使用SendData方法  
+
 ```csharp
 player.SendData(数据包类型,字符串参数,参数1,参数2...);
 ```
 
 - 以修改玩家最大生命值为例：  
+
 ```csharp
 private void TestCmd(CommandArgs args) //以命令为例
 {
@@ -47,25 +50,23 @@ WTF?
 
 ![image](https://github.com/user-attachments/assets/bfcfbacc-3a63-46be-9f66-3a7f64cf2955)
 
-
-  
-2. 往下翻，我们会发现有一个switch-case结构, 其中case中的数字就是数据包的编号  
+1. 往下翻，我们会发现有一个switch-case结构, 其中case中的数字就是数据包的编号  
 
 ![image](https://github.com/user-attachments/assets/ef96205f-b82a-4a8d-b0ed-9c024f1d8ff6)
 
+- 以修改玩家最大生命为例(修改了玩家的statLifeMax\)
 
-  
-- 以修改玩家最大生命为例(修改了玩家的statLifeMax\) 
  1. 我们直接按Ctrl+F搜索statLifeMax  
  2. 此时搜索到16号数据包的case，所以我们需要发送的就是16号数据包(PacketTypes.PlayerHp)
 ![image](https://github.com/user-attachments/assets/378110c7-74ac-4cf3-a48b-25b265e8c911)
 
  3. 我们仔细查看这个case部分不难看出, number\(参数1\)，就是玩家的索引\(number为0时发送索引为0的玩家的生命数据，number为1时发送索引为1的玩家的生命数据...\) \[number2对应参数2，number3对应参数3，有些数据包需要用到字符串参数\(例如: 弹幕文字、断开连接等\)\]  
+
 > 注: 你可以用类似的方法查看PacketTypes的定义来找到数据包类型\(16=>PacketTypes.PlayerHp\)
 如果你嫌麻烦也可以直接使用"\(PacketTypes\)数据包号"  
 \[例如: \(PacketTypes\)16\]  
 
-4. 得出PacketTypes.PlayerHp
+1. 得出PacketTypes.PlayerHp
 
 ```csharp
 player.SendData(PacketTypes.PlayerHp,"",玩家索引);
@@ -83,15 +84,12 @@ private void TestCmd(CommandArgs args) //测试命令 (这里只是方便演示)
 }
 ```
 
-2. 然后我们转到NetMessage.orig\_SendData\(\)搜索downedPlantBoss，找到对应的位置后，详细的阅读这个case中的代码找number，  
-3. 发现这个case中没有使用任何number或者text \(不需要任何参数和文本\)  
+1. 然后我们转到NetMessage.orig\_SendData\(\)搜索downedPlantBoss，找到对应的位置后，详细的阅读这个case中的代码找number，  
+2. 发现这个case中没有使用任何number或者text \(不需要任何参数和文本\)  
 
 ![image](https://github.com/user-attachments/assets/b1016bc4-3cf6-4589-9c62-8be0430bf44f)
 
-
-  
-4. 所以我们直接调用下面的方法就可以发送数据包了 \(由于7号数据包没有使用任何参数和文本，所以我们直接只填入包类型就好\)  
-
+1. 所以我们直接调用下面的方法就可以发送数据包了 \(由于7号数据包没有使用任何参数和文本，所以我们直接只填入包类型就好\)  
 
 ```csharp
 private void TestCmd(CommandArgs args)
@@ -104,32 +102,22 @@ private void TestCmd(CommandArgs args)
 ```
 
 ## 奇怪的东西  
+
 1. 有一个编写插件常常用到的数据包PlayerSlot\(5号\)，这个数据包的作用是修改玩家背包的物品\(包括装备栏的物品\)  
 我们转到NetMessage.orig\_SendData\(\) 找到5号的对应代码  
 
 ![image](https://github.com/user-attachments/assets/390c270e-fb23-4fc4-bac9-2eb6fa9eb988)
 
-
-  
-2. 从上面的代码我们能发现number\(参数1\)是玩家的索引\(Index\), number2\(参数2\)是对应格子的索引，而number3\(参数3\)却很难看出他的作用，此时我们可以通过查看MessageBuffer.GetData的定义来找到number3的作用  
+1. 从上面的代码我们能发现number\(参数1\)是玩家的索引\(Index\), number2\(参数2\)是对应格子的索引，而number3\(参数3\)却很难看出他的作用，此时我们可以通过查看MessageBuffer.GetData的定义来找到number3的作用  
 
 ![image](https://github.com/user-attachments/assets/3b324de0-71b4-4fcc-8d14-8d966318cd2e)
 
-
-  
-3. 根据NetMessage.orig\_SendData\(\)中代码number3在第4次被Write进数据包, 那么number3在MessageBuffer.GetData中也会在第4次被Read进变量中，所以MessageBuffer.GetData中的num9就是NetMessage.orig\_SendData\(\)中的number3\(参数3\)，然后我们发现，在使用Prefix方法的时候使用了num9\(也就是number3\)，从wiki上我们可以知道prefix是修饰语的意思，所以number3就是修饰语ID  
+1. 根据NetMessage.orig\_SendData\(\)中代码number3在第4次被Write进数据包, 那么number3在MessageBuffer.GetData中也会在第4次被Read进变量中，所以MessageBuffer.GetData中的num9就是NetMessage.orig\_SendData\(\)中的number3\(参数3\)，然后我们发现，在使用Prefix方法的时候使用了num9\(也就是number3\)，从wiki上我们可以知道prefix是修饰语的意思，所以number3就是修饰语ID  
 
 ![image](https://github.com/user-attachments/assets/36559065-9475-4402-b9bc-4ec1ec5c8052)
 
-
-  
-4. 得出:  
+1. 得出:  
 
 ```csharp
 player.SendData(PacketTypes.PlayerSlot,"",玩家索引,背包格子索引,物品修饰语ID);
 ```
-
-
-
-
-

@@ -12,15 +12,18 @@
 ## 什么是Player类？
 
 - Player是Terraria的一个类，属于"Terraria"的东西。这个类包含Terraria常用的玩家数据，这个类里的字段、方法繁多且杂乱，而且还包含了许多客户端才有效的字段、方法，只有部分方法、字段服务端可用。  
+
 ---
+
 ## TSPlayer对象
 
 ### 获取TSPlayer对象  
+
 获取玩家对象的方法有多种，主要根据你的需要选择，下面的代码通过不同的方式获取TSPlayer玩家对象  
+
 - TSPlayer.FindByNameOrID\(\)方法 \(主要用于命令\)  
+
  >TSPlayer.FindByNameOrID\(\)会返回一个列表，包含所有匹配的玩家对象，当然没有匹配结果会返回一个空列表  
-
-
 
 ```csharp
 private void Test(CommandArgs args)
@@ -59,7 +62,7 @@ private void Test(CommandArgs args)
 TSPlayer plr= TShock.Players[index]; //index为玩家索引
 ```
 
-> 这种方法非常重要，常常用在ServerApi钩子获取TSPlayer对象 
+> 这种方法非常重要，常常用在ServerApi钩子获取TSPlayer对象
 
 ```csharp
 //插件加载时执行的代码
@@ -86,10 +89,9 @@ protected override void Dispose(bool disposing)
 ```
 
 - 通过Where进行搜索  
-> 这种方法用于寻找特定条件的玩家，是一种万能的方法，示例代码如下: 
+
+> 这种方法用于寻找特定条件的玩家，是一种万能的方法，示例代码如下:
  (p!=null 很重要，请务必写上)  
-
-
 
 ```csharp
 string name = "233"; //假设的量
@@ -120,8 +122,6 @@ else
     //plr即为玩家对象
 }
 ```
-
-
 
 ### TSPlayer对象中常用字段和方法
 
@@ -247,7 +247,6 @@ else
 
 _\*部分方法例如:SendDate另做介绍_
 
-
 - 发送消息  
 
 | 字段名 | 参数 | 返回值 | 作用/含义 |
@@ -262,8 +261,8 @@ _\*部分方法例如:SendDate另做介绍_
 | SendMultipleMatchError | IEnumerable\<object> matches(不好解释) | void | 发送多个匹配错误信息 |
 
 效果:  
- -  SendMessage/SendInfoMessage/SendSuccessMessage/SendWarningMessage/SendErrorMessage  
 
+- SendMessage/SendInfoMessage/SendSuccessMessage/SendWarningMessage/SendErrorMessage  
 
 ```csharp
 args.Player.SendMessage("我是SendMessage~", 255, 155, 15);
@@ -275,8 +274,6 @@ args.Player.SendErrorMessage("我是SendErrorMessage~");
 
 ![image](https://github.com/user-attachments/assets/98a752e1-7b3f-41bf-be31-80d401f7fe59)
 
-
-  
 - SendFileTextAsMessage  
 
 ```csharp
@@ -293,10 +290,8 @@ args.Player.SendFileTextAsMessage("tshock/motd.txt"); //相对路径
 
 ![image](https://github.com/user-attachments/assets/af62f742-c668-4cf3-9eee-3dc62c49c95d)
 
+- SendMultipleMatchError  
 
-  
-  
--  SendMultipleMatchError  
 ```csharp
 TSPlayer plr;
 List<TSPlayer> plrs = TSPlayer.FindByNameOrID(args.Parameters[0]);
@@ -328,16 +323,16 @@ else
 
 ![image](https://github.com/user-attachments/assets/16fbf4a7-39f6-461e-aa36-66100d734f1d)
 
-
 ![image](https://github.com/user-attachments/assets/211b1b40-2761-4cd6-a905-515a77b35087)
 
-
 ---
+
 ## Player对象
 
 ### 获取Player对象
 
 - 通过TSPlayer获取(推荐)
+
 ```csharp
 TSPlayer plr;
 ...(通过上面的方法找到TSPlayer对象)
@@ -352,6 +347,7 @@ Player tplr = Main.player[index];
 
 - 通过Where进行搜索(其实建议先找TSPlayer的...)  
     > 这种方法用于寻找特定条件的玩家，是一种万能的方法，示例代码如下: (p!=null 很重要，请务必写上)
+  >
 ```csharp
 string name = "233"; //假设的量
 Player tplr;
@@ -376,6 +372,7 @@ else
 ```
   
 ### Player对象常用方法和字段
+
 - 生命/魔力
 
 | 字段名 | 类型 | 作用/意义 |
@@ -419,7 +416,6 @@ else
 
 - 群系&环境相关
   
-
 | 字段名 | 类型 | 环境/区域/群系 |
 | --- | --- | --- |
 | ZoneSkyHeight | bool | 太空 |
@@ -467,15 +463,12 @@ else
 | difficulty | byte | 玩家角色难度(软核0，中核1，硬核2，旅行3) |
 | SelectedItem | int | 玩家当前手持物品的slot(背包索引) |
 
-
 ## 习题:​
 
 ### 1.编写指令/dead，执行后返回当前死亡玩家列表\(绿色成功消息\)​
 
 ![image](https://github.com/user-attachments/assets/def2c4a9-1e82-46cd-8928-d0d128b66be1)
 
-
-  
 <details>
 <summary>参考答案</summary>
 
@@ -537,16 +530,13 @@ namespace Plugin
     }
 }
 ```
+
 </details>
-
-
 
 ### 2.编写指令"/看看你 \{玩家名\} ",执行后返回玩家的 生命/生命最大值\(魔力无加成最大值\)、魔力/魔力最大值\(魔力无加成最大值\)、玩家的难度\(旅行、软、中、硬核\)、幸运值luck\(绿色成功消息\)​
 
 ![image](https://github.com/user-attachments/assets/fef1aaa0-e7c1-4c10-9d58-c2f81bd6bb60)
 
-
-  
 <details>
 <summary>参考答案</summary>
 
@@ -648,13 +638,12 @@ namespace Plugin
     }
 }
 ```
-</details>
 
+</details>
 
 ### 3.编写指令"/看看你的 \{玩家名\} ",执行后返回玩家猪猪储蓄罐的钱币详情​
 
 ![image](https://github.com/user-attachments/assets/aa40b3c1-c348-473f-aca1-8cc709224feb)
-
 
 <details>
 <summary>参考答案</summary>
@@ -764,6 +753,7 @@ namespace Plugin
     }
 }
 ```
+
 </details>
 
 ### 4.实现自动队伍，当玩家登录或加入世界，玩家有以下权限就切换对应的队伍​
@@ -898,11 +888,11 @@ namespace Plugin
     }
 }
 ```
+
 </details>
 
-
-
 ### 5.当玩家在墓地环境移动时，通过TSPlayer.DamagePlayer\(\)对其造成5点伤害  
+>
 > 钩子: GetDataHandlers.PlayerUpdate  
 
 <details>
@@ -965,4 +955,5 @@ namespace Plugin
     }
 }
 ```
+
 </details>

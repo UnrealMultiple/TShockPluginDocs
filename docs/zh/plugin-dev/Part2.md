@@ -6,6 +6,7 @@
 - TShock插件的初始化顺序
 
 ## 文件结构
+
 ```
 📂MyFirstPlugin
 ├── 📂MyFirstPlugin //项目文件夹
@@ -29,7 +30,9 @@
 ```
 
 ## 插件模板​
+
 以下是一个常用的TShock插件模板
+
 ```csharp
 using System.Reflection;
 using Terraria;
@@ -77,10 +80,11 @@ public class Plugin : TerrariaPlugin
 }
 ```
 
-
 ## 插件基本信息​
+
 以下代码可以设置插件的一些基本信息，插件名建议按照功能命名，不要起奇怪名字(例如"炸裂"), Author(插件作者)、Name(插件名字)、Version(插件版本)将会在插件初始化完成时显示  
 ![image](https://github.com/user-attachments/assets/be546207-ea31-43c9-b26e-4114c8d9ed51)
+
 ```csharp
 //插件的名称
 public override string Name => "MyFirstPlugin";
@@ -95,10 +99,10 @@ public override string Description => "我也不知道这个有什么用";
 public override Version Version => new(2024, 1,4,1);
 ```
 
-
 > [!NOTE]
 > 使用`new Version()`将会显示此方法参数为版本号  
 > 而使用`Assembly.GetExecutingAssembly().GetName().Version`获取的是程序集的版本号, 程序集版本号需要在项目属性中修改  
+>
 > ```csharp
 > //插件的版本
 > public override Version Version => new Version(2024, 1,4,1); //代码中设置版本 (推荐)
@@ -106,21 +110,18 @@ public override Version Version => new(2024, 1,4,1);
 > Assembly.GetExecutingAssembly().GetName().Version; //项目中设置版本 (麻烦)
 > ```
 
-
 <details>
   <summary>修改程序集版本</summary>
     1. 右键资源管理器中的项目(这里是Myfirstplugin),然后点击属性
         <img src="https://github.com/user-attachments/assets/41c63f6d-92a9-4ec8-a7b5-4f4723b38feb" alt="img"><br>
     2. 修改程序集版本即可
         <img src="https://github.com/user-attachments/assets/e8fa0c71-122e-454e-bfa1-bb9007301105" alt="img"><br>
-      
+
 </details>
-
-
 
 ## 插件的构造器​
 
-插件的构造器，也叫构造函数。当TShock创造插件对象时，构造函数就会被调用，构造函数中的代码会比`Initialize`方法更先执行。服务端会先按照读取到插件的顺序(取决于插件的文件名)执行所有插件的构造函数，再按照`Order`由小到大执行插件的`Initialize`方法 
+插件的构造器，也叫构造函数。当TShock创造插件对象时，构造函数就会被调用，构造函数中的代码会比`Initialize`方法更先执行。服务端会先按照读取到插件的顺序(取决于插件的文件名)执行所有插件的构造函数，再按照`Order`由小到大执行插件的`Initialize`方法
 
 ```csharp
 //插件的构造器
@@ -135,6 +136,7 @@ public Plugin(Main game) : base(game)
     base.Order = 1;
 }
 ```
+
 > [!CAUTION]
 > 通常情况下，构造函数的执行会在TShock初始化之前
 > 如果在构造函数中编写代码(例如建表)，可能会导致十分玄学的问题，所以没有特殊需要下一般插件的构造函数都会直接放空。
@@ -157,7 +159,9 @@ public override void Initialize()
 ```
 
 ## 插件的卸载方法
+
 插件的卸载方法在插件卸载(通常是TShock关闭时)被调用。如果你使用`PluginLoader`, 那么请你务必写好卸载方法, 否则会导致插件的功能卸载不完全, 重载出现异常。
+
 ```csharp
 //插件卸载时执行的代码
 protected override void Dispose(bool disposing)
@@ -170,8 +174,10 @@ protected override void Dispose(bool disposing)
      base.Dispose(disposing);
 }
 ```
+
 > [!IMPORTANT]  
 > 注册、注销有始有终  
+>
 > ```csharp
 > //注册 Initialize
 > Commands.ChatCommands.Add(new Command("xsb.fishrank", Fish, "钓鱼排行"));

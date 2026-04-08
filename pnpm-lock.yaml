@@ -18,8 +18,8 @@ importers:
         specifier: 2.0.0-rc.105
         version: 2.0.0-rc.105(@algolia/client-search@5.49.2)(search-insights@2.17.3)(typescript@5.9.3)(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.31)(esbuild@0.14.7)(tslib@2.8.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.30(typescript@5.9.3)))
       '@vuepress/plugin-google-analytics':
-        specifier: 2.0.0-rc.98
-        version: 2.0.0-rc.98(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.31)(esbuild@0.14.7)(tslib@2.8.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.30(typescript@5.9.3)))
+        specifier: 2.0.0-rc.128
+        version: 2.0.0-rc.128(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.31)(esbuild@0.14.7)(tslib@2.8.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.30(typescript@5.9.3)))
       '@vuepress/plugin-register-components':
         specifier: 2.0.0-rc.98
         version: 2.0.0-rc.98(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.31)(esbuild@0.14.7)(tslib@2.8.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.30(typescript@5.9.3)))
@@ -2328,10 +2328,10 @@ packages:
     peerDependencies:
       vuepress: 2.0.0-rc.24
 
-  '@vuepress/plugin-google-analytics@2.0.0-rc.98':
-    resolution: {integrity: sha512-sL3hrUQSIFW1L+U1UEAAbPoFc2C/rukrbuHqExGnUL/VJSGe91XpfUByYvg1aAN25rkgjcNCpsuSTNWewH5HjQ==}
+  '@vuepress/plugin-google-analytics@2.0.0-rc.128':
+    resolution: {integrity: sha512-2AcR/05woy94OjBcbnB8NLR/F3pLC7wuqxVY9pEvYtsDli4PNVfGKjRGp76ksRggTJTUPxzIITbeCwT12qmK9g==}
     peerDependencies:
-      vuepress: 2.0.0-rc.22
+      vuepress: 2.0.0-rc.28
 
   '@vuepress/plugin-icon@2.0.0-rc.112':
     resolution: {integrity: sha512-aufvjiIS9zHuTz2fQXZLCR6zSVtOifnCdnj+sQ8LYsT53OHikI1rNS8o0Dk68IyPP3eiFjdQ423+sKz17UPBYg==}
@@ -11502,7 +11502,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@vuepress/plugin-google-analytics@2.0.0-rc.98(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.31)(esbuild@0.14.7)(tslib@2.8.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.30(typescript@5.9.3)))':
+  '@vuepress/plugin-google-analytics@2.0.0-rc.128(vuepress@2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.31)(esbuild@0.14.7)(tslib@2.8.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.30(typescript@5.9.3)))':
     dependencies:
       vuepress: 2.0.0-rc.22(@vuepress/bundler-vite@2.0.0-rc.22(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.22(@vue/compiler-sfc@3.5.31)(esbuild@0.14.7)(tslib@2.8.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.30(typescript@5.9.3))
 

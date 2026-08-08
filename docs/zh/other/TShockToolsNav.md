@@ -3,7 +3,7 @@
 ## 开服基础教程
 
 - MonikaTR论坛: [TShock 开服基础教程 (推荐)](https://tr.monika.love/docs/tshock-tutorial-1/)
-- Terraria.ink：[TShock入门教程 (新版，待续)](https://docs.terraria.ink/zh/tshock/get-start.html/)
+- Terraria.ink：[TShock入门教程 (新版，待续)](https://docs.terraria.ink/zh/tshock/get-start.html)
 - TRHub论坛: [TShock 开服基础教程 (慢)](https://trhub.cn/threads/tshock.29/)
 
 ---
@@ -29,9 +29,9 @@
 
 ### 国内维护的插件库（推荐）
 
-- **插件介绍文档网站**：[docs.terraria.ink](https://docs.terraria.ink/zh/guide/get-start.html/)
+- **插件介绍文档网站**：[docs.terraria.ink](https://docs.terraria.ink/zh/guide/get-start.html)
 - **插件单独下载站**：[store.terraria.ink](https://store.terraria.ink/)
-- **直接下载插件包(github.moeyy.xyz国内镜像下载)**[Plugins.zip](https://github.moeyy.xyz/https://github.com/UnrealMultiple/TShockPlugin/releases/download/V1.0.0.0/Plugins.zip)
+- **直接下载插件包(github.moeyy.xyz国内镜像下载)**: [Plugins.zip](https://github.moeyy.xyz/https://github.com/UnrealMultiple/TShockPlugin/releases/download/V1.0.0.0/Plugins.zip)
 - **直接下载插件包(ApmApi国内自建)**: [Plugins.zip](http://api.terraria.ink:11434/plugin/get_all_plugins?tshock_version=6.0.0)
 - **直接下载插件包（Github主仓库）**: [Plugins.zip](https://github.com/UnrealMultiple/TShockPlugin/releases/download/V1.0.0.0/Plugins.zip)
 - **GitHub仓库**: [TShockPlugin](https://github.com/UnrealMultiple/TShockPlugin)
@@ -40,7 +40,7 @@
 
 - [新官方插件库](https://github.com/Pryaxis/TShock/wiki/Plugins)
 - [旧官方插件库](https://github.com/Pryaxis/Plugins)
-- [官方Discord](https://discord.com/channels/479657350043664384/1025055555921915924)
+- 官方Discord [加入](https://discord.gg/Cav9nYX) [插件板块](https://discord.com/channels/479657350043664384/1025055555921915924)
 
 ---
 

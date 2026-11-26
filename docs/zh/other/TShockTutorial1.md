@@ -95,6 +95,9 @@
 
 什么，下载后怎么安装？我只能说安装的时候上面提示都是中文的
 
+> [!NOTE]
+> 本文原教程主要基于 **TShock 5**（需要 .NET 6 运行时，`yaaiomni` 目前也不支持 TShock 6）。如果你使用的是 **TShock 6**，请安装 [.NET 9 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/9.0)，并可配合参考 [TShock 新版教程](../tshock/get-start.md)。
+
 如果你电脑成功运行过tshock，哪怕只有一次，那么你就可以直接运行TShock.Server.exe或你的启动文件  
 什么？你看不到.exe这个后缀？  
 请单击文件夹上方的查看，勾选“文件扩展名”（仅限Win10）
@@ -183,6 +186,9 @@ Terraria，启动！
 输入/setup `<你的setup码>`  
 **注意：每个TShock生成的setup-code都是不同的**，这里仅做示例，<s>不要指望用这里的验证码熊服</s>
 
+> [!NOTE]
+> 在部分新版 TShock（如 TShock 6）中，执行 `/setup` 前可能需要先在游戏内使用 `/register <密码>` 注册并 `/login` 登录，再执行 `/setup <认证码>` 后通过控制台 `/user group <名字> owner` 提权。
+
 输入完了就是见证奇迹的时刻了
 
 ![14](./assets/tshock-tutorial/part1-14.png)
@@ -241,11 +247,14 @@ owner组不具有*tshock.ignore.bypassssc*权限，因此<strong>可以在SSC模
 
 ![22](./assets/tshock-tutorial/part1-22.png)
 
-在这里<strong>输入off来保存地图并关服</strong>，**直接点击X会导致地图数据丢失！  
-Tips:  
-当你的服务器被恶意破坏后的短时间内你可以通过/off-nosave或直接点击×来回档(当前/off-nosave失效中，预计下版本修复)  
-有时候可以将服务器状态恢复到被恶意破坏前**  
+在这里<strong>输入off来保存地图并关服</strong>，**直接点击X会导致地图数据丢失！**  
+**Tips:**  
+**当你的服务器被恶意破坏后的短时间内你可以通过/off-nosave或直接点击×来回档(当前/off-nosave失效中，预计下版本修复)**  
+**有时候可以将服务器状态恢复到被恶意破坏前**  
 同样出现保存数据的文字，文字滚动完毕后黑色窗口会自动关闭
+
+> [!WARNING]
+> 直接点击 `×` 强行关闭窗口无法回滚已经自动保存过的世界数据，反而可能丢失正常进度甚至损坏地图或数据库文件；真正可靠的回档应依赖定期备份。
 
 ### 指令说明规范：
 
@@ -812,12 +821,13 @@ RestApiPort是rest的端口，不能服务器端口一样，使用服务器商�
 
 ```jsonc
 "ApplicationRestTokens": {
-  "114514": {
+  // 以下均为演示占位符，实际开启 REST API 前请务必替换为高强度随机密钥（切勿使用 114514 等弱令牌）
+  "请替换为随机高强度密钥1": {
     "Username": "阿伟",
     "UserGroupName": "superadmin"
   },
-  "19199810": { // 新增的用户令牌标识符
-    "Username": "杰哥," // 新用户的用户名
+  "请替换为随机高强度密钥2": { // 新增的用户令牌标识符
+    "Username": "杰哥", // 新用户的用户名
     "UserGroupName": "new_user_group" // 新用户所属的用户组
   }
 }
@@ -828,9 +838,12 @@ RestApiPort是rest的端口，不能服务器端口一样，使用服务器商�
 然后启动你的服务器,<s>你可以发现什么事情也没有发生</s>  
 不!你错了!接下来就是见证奇迹的时刻!  
 **打开你的浏览器,输入如下的url**  
-[127.0.0.1:7878/tokentest?token=token](https://127.0.0.1:7878/v2/token/create?username=%E8%BF%99%E9%87%8C%E5%A1%AB%E5%86%99%E4%BD%A0%E7%9A%84%E8%B6%85%E7%AE%A1%E8%B4%A6%E5%8F%B7&password=%E8%BF%99%E9%87%8C%E5%A1%AB%E5%86%99%E4%BD%A0%E7%9A%84%E8%B6%85%E7%AE%A1%E5%AF%86%E7%A0%81)  
-比如我这里就是[127.0.0.1:7878](https://127.0.0.1:7878/v2/token/create?username=%E8%BF%99%E9%87%8C%E5%A1%AB%E5%86%99%E4%BD%A0%E7%9A%84%E8%B6%85%E7%AE%A1%E8%B4%A6%E5%8F%B7&password=%E8%BF%99%E9%87%8C%E5%A1%AB%E5%86%99%E4%BD%A0%E7%9A%84%E8%B6%85%E7%AE%A1%E5%AF%86%E7%A0%81)/tokentest?token=yuanshen  
+`http://127.0.0.1:7878/tokentest?token=token`  
+比如我这里就是 `http://127.0.0.1:7878/tokentest?token=yuanshen`  
 你会发现你的服务器给了你回应!(别想了，这是我演示用的token)
+
+> [!WARNING]
+> 请勿在公网环境或浏览器地址栏 URL 参数中直接传递超管账号密码（例如通过 `/v2/token/create?username=...&password=...`），以免明文凭据残留在浏览器历史记录与代理/服务器日志中；建议优先在 `config.json` 的 `ApplicationRestTokens` 中配置随机密钥，或通过本机请求体方式调用接口。
 
 ![50](./assets/tshock-tutorial/part1-49.png)
 

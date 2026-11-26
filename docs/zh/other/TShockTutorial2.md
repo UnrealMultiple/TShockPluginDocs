@@ -169,7 +169,7 @@ SQLiteStudio的话是完全免费
 ![59](./assets/tshock-tutorial/part2-11.png)
 
 ---是的，当数据库类型为MySQL时，上面的介绍依然适用  
-以MySQL数据库类型启动服务器，可以实现很魔法的操作，例如多服同背包等  
+以MySQL数据库类型启动服务器，可以实现很魔法的操作，例如多服同背包等（注意：不要用同一角色账号同时登录多个共用同一 MySQL 数据库的服务器，否则后退出的服务器存档会覆盖先保存的进度）  
 这个是比较进阶的东西，建议自己去了解mysql的使用
 
 诶，这里我们就可以涉及到一个问题了，假如我的玩家一个周目打完了，我要进行重置，该怎么办？
@@ -187,7 +187,7 @@ SQLiteStudio的话是完全免费
 那么如果我们只重置玩家的数据，且玩家需要重新注册，需要改一些什么呢
 
 ::: details 答案
-删除或擦除“user（玩家注册的用户和管理员添加的用户）  
+删除或擦除“Users（玩家注册的用户和管理员添加的用户）  
 删除或擦除tsCharacter（SSC模式下，玩家的角色信息）”
 :::
 
@@ -546,7 +546,8 @@ priority=1
 
 ```bat
 :start
-Terraria.Server.exe -lang 7 -port 7777 -world "D:\文档\My Games\Terraria\Worlds\大师地图.wld"
+TShock.Server.exe -lang 7 -port 7777 -world "D:\文档\My Games\Terraria\Worlds\大师地图.wld"
+timeout /t 5
 goto start
 ```
 
@@ -558,24 +559,25 @@ goto start
 ```bash
 #!/bin/bash
 while true; do
-./TShock.Server -lang 7  -port 7777 -world "/home/container/大师地图wld"
+./TShock.Server -lang 7 -port 7777 -world "/home/container/大师地图.wld"
 sleep 5
 done
 ```
 
-复制进去，保存，然后再把.txt后缀改成.sh就好了
+复制进去，保存，然后再把.txt后缀改成.sh就好了（Linux 下首次运行需先执行 `chmod +x 启动.sh` 赋予执行权限，或直接运行 `bash 启动.sh`）
 :::
 
 这一坨东西我们来看下
 
-```bat
+```text
 :start 则是个标记
 重点在这行：
-Terraria.Server.exe不必多说，这是你要启动的程序
+TShock.Server.exe 不必多说，这是你要启动的程序
 后续的便是“命令行参数”：
 -lang 7 切换语言模式7，即中文
 -port 7777 设置程序端口为7777
 -world "D:\文档\My Games\Terraria\Worlds\大师地图.wld"  设置启动的地图路径，你需要改成你所使用的地图的所在路径
+timeout /t 5 表示等待 5 秒，避免启动失败时死循环刷屏
 看最后的goto start
 就是跳转到先前的start标记那里往下执行，这样就完成了一个使用汉化且自动重启的服务器
 ```
@@ -605,6 +607,7 @@ TShock.Server.exe -lang 7 -port 7777 -config serverconfig.txt
 @echo.
 @echo Restarting server...
 @echo.
+timeout /t 5
 goto start
 ```
 
@@ -629,7 +632,7 @@ goto start
 就在你刚要输入端口选择地图的时候, 它直接就给你开始加载地图了  
 这样就省事多了  
 而且如果你输入off  
-也会自动重启并选择端口和地图  
+也会自动重启并选择端口和地图（注：使用这种无条件自动重启循环时，维护期间若想彻底关服而不自动拉起，需在 `off` 后按 `Ctrl+C` 终止脚本或直接关闭脚本窗口，也可改用不带循环的单次启动脚本）  
 这样做还有一个用途, 如果某天你的服务器由于种种原因突然崩服了  
 像这样
 
